@@ -1,0 +1,9 @@
+/Entry>
+      <Entry data="AQ==" />
+      <Entry>
+	  
+</Entry>\n      <Entry data="AQ==" />\n      <Entry>
+
+ѕеренос строки перед пробелами:
+найти: \.\s+[</Enter>]
+заменить: .\\n<

@@ -1,0 +1,971 @@
+0	Tear Balm	[Restores 800 HP]\nA healing salve prepared by the Septian Church.
+1	Teara Balm	[Restores 2500 HP]\nA healing salve prepared by the Septian Church.
+2	Tearal Balm	[Restores 8000 HP]\nA healing salve prepared by the Septian Church.
+3	EP Charge I	[Restores 100 EP]\nA capsule filled with orbal energy.
+4	EP Charge II	[Restores 300 EP]\nA capsule filled with orbal energy.
+5	EP Charge III	[Restores 500 EP]\nA capsule filled with orbal energy.
+6	Reviving Balm	[Cures K.O./Restores 1000 HP]\nA salve that cures K.O. and restores 1000 HP.
+7	Celestial Balm	[Cures K.O./Restores 5000 HP]\nA salve that cures K.O. and restores 5000 HP.
+8	Celestial Balm EX	[Cures K.O./Restores 10,000 HP]\nA salve that cures K.O. and restores 10,000 HP.
+9	Zeram Powder	[Cures K.O./Restores all HP/Restores 100 CP]\nA powder that revives and restores all HP and 100 CP.
+10	Zeram Capsule	[Cures K.O./Restores all HP/Restores 200 CP]\nA powder that revives and restores all HP and 200 CP.
+11	Antidote	[Cures Poison]\nA salve from the Septian Church that neutralizes poisons.
+12	Relaxant	[Cures Seal]\nA gelatinous liquid that cures paralysis of the limbs.
+13	Insulating Tape	[Cures Mute]\nQuick-fix tape to repair a neutralized orbment.
+14	Eye Drop	[Cures Blind]\nEye drops that cure sudden visual impairments.
+15	Mint Drop	[Cures Sleep/Nightmare]\nA mint-flavored candy that cures drowsiness when licked.
+16	Cooling Spray	[Cures Burn]\nA spray that cools burns rapidly with icy powder.
+17	Warmer	[Cures Freeze]\nA disposable packet that warms the whole body.
+18	Softening Ointment	[Cures Petrify]\nAn ointment that softens petrified parts of the body.
+19	Stimulant	[Cures Faint]\nA salve from the Septian Church that restores consciousness.
+20	Sedative	[Cures Confuse]\nA salve from the Septian Church that restores mental alertness.
+21	S-Tablet	[Cures Stat Down]\nA pill that returns lowered attributes to their normal levels.
+22	Curia Balm	[Cures Abnormal Status]\nA salve that cures all status abnormalities except K.O.
+23	Smoke Grenade	[100% success fleeing battle]\nUsed to escape from battle. (Can't be used in certain battles)
+24	Battle Scope	[Analysis]\nAnalyzes an enemy's key data.
+25	Shining Pom Bait	Bait to lure out a rare and elusive Shining Pom.
+26	Vanilla Gelato	[Restores 2800 HP/Cures Burn]\nA creamy gelato made with generous amounts of milk.
+27	Lemon Gelato	[Restores 1000 HP/Restores 150 EP]\nA refreshing gelato with just the right amount of tartness.
+28	Tetra Gelato	[Restores 700 HP/STR/DEF/ATS/ADF+25% (4 Turns)]\nA special gelato with swirls of four different flavors.
+29	Ground Sausage	[Restores 4200 HP/Cures Seal]\nAn extra thick, savory sausage.
+30	Turkey Leg	[Restores 4200 HP/Cures Mute]\nA tender, juicy turkey leg, still on the bone.
+31	Chocobanana Crepe	[Restores 4000 HP]\nA banana crepe drizzled with chocolate. Incredibly sweet.
+32	Banana Crepe	[Restores 3200 HP]\nA standard crepe made with bananas and fresh cream.
+33	Apple Juice	[Restores 1000 HP/Restores 50 EP]\n100% pure apple juice.
+34	Orange Juice	[Restores 1000 HP/Restores 20 CP]\nPure orange juice squeezed from premium, ripe oranges.
+35	Steak Skewer	[Restores 4800 HP/STR+25% (3 Turns)]\nSpecially prepared by Becky without any regard for profit.
+36	Rich Strawberry Crepe	[Restores 6000 HP]\nDecadent crepes masterfully prepared by Hugo.
+37	Dark Cherry Pie	[Restores 2000 HP/Restores 200 EP]\nA new kind of pie made using flavorful dark cherries.
+38	U-Material	An unknown material that is impossible to analyze.\nCan be used to customize equipment at an orbal factory.
+39	Zemurian Ore Shard	An ore fragment that glistens like the stars in the night sky.\nThey can be combined to form a full chunk of Zemurian Ore.
+40	Zemurian Ore	A lump of ore that glistens like the stars in the night sky.\nIts hardness makes it extremely difficult to work with.
+41	Orbal Scale	Entrusted to you by George. It needs to be delivered to \nNicholas of the Cooking Club.
+42	Antique Orbal Lamp	Entrusted to you by George. It needs to be delivered to\nMicht at the pawn shop.
+43	Orbal Wristwatch	Entrusted to you by George. It needs to be delivered to \nMichael at Radio Trista.
+44	Colette's Student Notebook	Colette's student notebook. Found on the second floor\nof the main building.
+45	Passion Leaf Bundle	A rare kind of seasoning native to the southern part of the\ncontinent. Has a unique flavor that's quite addictive.
+46	New Orbment Light	A replacement orbment light, entrusted to you by Samus.\nGlows brightly.
+47	Broken Orbment Light	A broken orbment light, recovered from a road lamp on the\nhighway.
+48	Bear Claw	A thorny medicinal herb that looks like a bear's claw.\nSometimes used in cooking.
+49	Imperial Carrots	Highly nutritious bright red carrots. A rare ingredient\nsometimes given as a gift to the Imperial family.
+50	Lost Wallet	Someone's wallet, entrusted to you by Lizzie.
+51	Behind the War of the Lions	A book ordered by an instructor. Keynes asked you to deliver\nit.
+52	Modern Art: The Complete Works	A book ordered by an instructor. Keynes asked you to deliver\nit.
+53	Topical Science	A book ordered by an instructor. Keynes asked you to deliver\nit.
+54	Analyzing Macroeconomics	A book ordered by an instructor. Keynes asked you to deliver\nit.
+55	The Empire's Hottest Spots	A book ordered by an instructor. Keynes asked you to deliver\nit.
+56	Grand Rose Money	Money to buy a grand rose. Received from Linde.
+57	Snow Lilies	Fresh flowers received from Jane's florist. They need to be\ngiven to Linde.
+58	Grand Rose	A fresh flower bought from Jane's florist. It needs to be\ngiven to Linde.
+59	Dryad's Tear	A lump of resin obtained from the North Kreuzen Highway.\nCan be processed into a jewel as radiant as septium.
+60	Pink Salt	Natural rock salt from the Aurochs Canyon Path.
+61	Healing Herb	A medicinal herb given to you by Sister Tatiana.
+62	Munk's Sticker	A circular sticker dropped by Munk.
+63	Epona Grass	A medicinal herb with yellow flowers found in the south part\nof the Nord Highlands. Used to make a medicine for horses.
+64	Food Parcel	A food parcel from Kilte for the soldiers at the watchtower.\nNeeds to be delivered to a soldier called Zats.
+65	Erebonian Wine	A token of thanks from Zats. It needs to be delivered to\nKilte.
+66	Eastern Ink Brush	A well-worn Eastern ink brush. Needs to be returned to its\nowner.
+67	Handmade Summer Cap	A handmade cap dropped by a resident of the Ost District.\nIt's light and cool.
+68	Orbal Camera	An orbal camera received from Norton. Used for his work as a\njournalist.
+69	PR Comment	A comment from a store on Vainqueur Street for a pamphlet.
+70	Record Money	Money to buy a record. Received from Heming.
+71	Amber Amour	An antique record found at a used goods shop.
+72	Ladies' Stregas	[DEF+120/MOV+3/STR+15/ACC+20%/Laura Only]\nA new model of Stregas. Received from Howard.
+73	Orbal Pedometer	An orbal pedometer set to be used with a new pair of shoes.\nUsing it allows you to check how many steps you have taken.
+74	Phantom Thief B's Card	A card left by Phantom Thief B. Received from Cordelia, the\nshop's owner.
+75	Phantom Thief B's Card	A card left by Phantom Thief B. Found at Dreichels Plaza.
+76	Phantom Thief B's Card	A card left by Phantom Thief B. Found in the Crystal Garden.
+77	Phantom Thief B's Card	A card left by Phantom Thief B. Found in the former guild\nbranch.
+78	Phantom Thief B's Card	A card left by Phantom Thief B. Found at Heimdallr Port.
+79	Crimson Tiara	Unobtainable item.
+80	Maintenance Key	A key, entrusted to you by Duncan. It's required to open the\nservice panel on road lamps.
+81	New Orbment Light	A replacement orbment light, entrusted to you by Duncan.\nGlows brightly.
+82	Broken Orbment Light	A broken orbment light, recovered from a road lamp on the\nhighway.
+83	White Seed	A grain crop with pure white seeds. Often found in the Legram\narea.
+84	Legram Pretzel	A pretzel baked by Sister Theramis. Its unique shape is based\non the monument in the center of Legram.
+85	Gold Salmon	Unobtainable item.
+86	Luminous Grass	A rare type of flower that blooms only immediately after \nthe fog disappears in Legram.
+87	Linium	A rare metal found in a mine shaft. It had been consumed by\na giant monster.
+88	Orbal Wave Detector	A device to measure orbal waves used by ARCUS orbments. \nNeeds to be used in various places, primarily indoors.
+89	Blade Deck	A card game, given by Micht. Ideal for playing on long train\njourneys.
+90	Permission Slip (Nicholas)	A piece of paper that grants the student who owns it\npermission to sell food and drink at the academy festival.
+91	Permission Slip (Colette)	A piece of paper that grants the student who owns it\npermission to sell food and drink at the academy festival.
+92	Permission Slip (Hugo)	A piece of paper that grants the student who owns it\npermission to sell food and drink at the academy festival.
+93	Permission Slip (Becky)	A piece of paper that grants the student who owns it\npermission to sell food and drink at the academy festival.
+94	Black Leather Notebook	A black, leather-bound notebook dropped by Vice Principal\nHeinrich. Needs to be returned to him.
+95	Mishy Plush	A plush of Mishy. Won at the Mishy Panic attraction.
+96	Relief Card	Proof that its owner has defeated the Blade Master at Gate of\nAvalon. Has a relief on its surface.
+97	Super Stallion Shield	An award given to those who cleared Super Stallion in a set\ntime. Lambert's beloved horse Whitcomb is carved onto it.
+98	Orbal Radio	An orbal radio received from George.
+99	Old Schoolhouse Key	The key to the old schoolhouse. Received from Principal\nVandyck.
+100	Nord Highlands Map	A map of the Nord Highlands, received from Lieutenant General\nZechs.
+101	Student Notebook	A notebook issued to all members of Thors Military Academy,\ncontaining the school rules. Also serves as a form of ID.
+102	Recipe Book	A notebook to record various recipes. You can cook food from\nthe NOTE menu.
+103	Fishing Book	A notebook to record details of the fish you have caught.
+104	Memory Quartz	A memory quartz received from Towa. Contains a video of a \nconcert held last year.
+105	Address & Keys	A memo with an address written on it, along with a key,\nreceived from Governor Regnitz.
+106	Underground Passage Key	The key to enter an underground passage under Heimdallr, \nreceived from Noble.
+107	Underground Waterway Key	The key to enter an underground waterway under Heimdallr,\nreceived from Port Chief Danberto.
+108	Abend Time Sticker	A sticker sent by Abend Time. Has the serial number '120'\nwritten on it.
+109	Yellow Orb	An orb obtained within Lohengrin Castle. Can be used to\ndisable the barrier that corresponds with it.
+110	Red Orb	An orb obtained within Lohengrin Castle. Can be used to\ndisable the barrier that corresponds with it.
+111	Mine Shaft Key	A key received from Mine Chief Rudolf. Can be used to\nenter a sealed-off mine shaft.
+112	Card Key	A card key which opens the door leading to a passage between \nthe upper level of Roer City and the iron mine.
+113	Millium's Student Notebook	Millium's student notebook. Received from Towa.
+114	Student Council Tasks (Apr)	An envelope containing information on the assorted requests\nassigned by Towa.
+115	Student Council Tasks (May)	An envelope containing information on the assorted requests\nassigned by Towa.
+116	Student Council Tasks (Jun)	An envelope containing information on the assorted requests\nassigned by Towa.
+117	Student Council Tasks (Jul)	An envelope containing information on the assorted requests\nassigned by Towa.
+118	Student Council Tasks (Aug)	An envelope containing information on the assorted requests\nassigned by Towa.
+119	Student Council Tasks (Sep)	An envelope containing information on the assorted requests\nassigned by Towa.
+120	Student Council Tasks (Oct)	An envelope containing information on the assorted requests\nassigned by Towa.
+121	Field Study Envelope (Apr)	An envelope containing information on all of the field study\ntasks assigned.
+122	Field Study Envelope (May)	An envelope containing information on all of the field study\ntasks assigned.
+123	Field Study Envelope (Jun)	An envelope containing information on all of the field study\ntasks assigned.
+124	Field Study Envelope (Jul)	An envelope containing information on all of the field study\ntasks assigned.
+125	Field Study Envelope (Aug)	An envelope containing information on all of the field study\ntasks assigned.
+126	Field Study Envelope (Sep)	An envelope containing information on all of the field study\ntasks assigned.
+127	Kazekiri	[STR+75/RNG+1]\nA light, easy to use blade designed to cut through wind.
+128	Kazekiri +1	[STR+90/SPD+3/EVA+5%/RNG+1]\nA light, easy to use blade designed to cut through wind.
+129	Uzuki	[STR+120/RNG+1]\nA blade forged at winter's end, praying for a good harvest.
+130	Kisaragi	[STR+150/SPD+3/EVA+5%/RNG+1]\nA sharper, more powerful version of the Uzuki blade.
+131	Kogitsunemaru	[STR+180/RNG+1]\nA replica of a sword that appears in an Eastern legend.
+132	Rougatou	[STR+215/SPD+3/EVA+5%/RNG+1]\nA roughly-made tachi that's exceptionally sharp.
+133	Nowaki no Tachi	[STR+255/RNG+1]\nA decorated blade with the dignity of angry winds.
+134	Fuujin no Tachi	[STR+290/SPD+3/EVA+5%/RNG+1]\nA refined blade that embodies the power of the raging winds.
+135	Sasameyuki	[STR+330/RNG+1]\nA tachi with a delicate, snow-like pattern on its surface.
+136	Akayukitou	[STR+365/SPD+5/EVA+10%/RNG+1]\nA reinforced tachi. Its polished blade has a scarlet glow.
+137	Hakuu	[STR+405/RNG+1]\nA sword that glistens beautifully in the rain.
+138	Shigure	[STR+440/SPD+5/EVA+10%/RNG+1]\nA tachi which, when swung, sparkles like raindrops.
+139	Fuji Ichimonji	[STR+480/RNG+1]\nA tachi forged by a famous Eastern swordsmith.
+140	Kage Ichimonji	[STR+515/SPD+5/EVA+10%/RNG+1]\nA blade reinforced with a black metal, ideal for espionage.
+141	Yakou	[STR+555/RNG+1]\nA glistening blade that glows in the blackest night.
+142	Byakuya	[STR+600/SPD+7/EVA+15%/RNG+1]\nAugmented by a strange ore. Can supposedly cut light itself.
+143	\xe2\x97\x86\xe6\xad\xa6\xe5\x99\xa8\xef\xbc\x88\xe5\xb0\x8e\xe5\x8a\x9b\xe5\xbc\x9300\xef\xbc\x89\xe6\x9c\xaa\xe4\xbd\xbf\xe7\x94\xa8	\xe3\x80\x90STR+60 RNG+6\xe3\x80\x91\n
+144	Prima Bow	[STR+75/RNG+6]\nA well-made bow with a simple, easy to use design.
+145	Light Bow	[STR+105/RNG+6]\nA bow designed to be light without any loss of power.
+146	Rapid Bow	[STR+135/ATS+10/SPD+5/RNG+6]\nA bow that has been modified to be able to fire more quickly.
+147	Prima Bow +1	[STR+190/ATS+10/SPD+5/RNG+6]\nA well-made bow with a simple, easy to use design.
+148	Windlass	[STR+240/RNG+6]\nA bow capable of firing arrows that pierce the wind.
+149	Wind Arc	[STR+275/ATS+10/SPD+5/RNG+6]\nA bow that fires arrows strengthened by the wind.
+150	Prima Bow +2	[STR+340/ATS+10/SPD+5/RNG+6]\nA well-made bow with a simple, easy to use design.
+151	Prima Bow +3	[STR+415/ATS+10/SPD+5/RNG+6]\nA well-made bow with a simple, easy to use design.
+152	White Bow	[STR+465/RNG+6]\nA beautifully designed bow that has been imbued with prayers.
+153	Platinum Bow	[STR+500/ATS+20/SPD+7/RNG+6]\nA powerful, ornate bow.
+154	Siren's Song	[STR+540/RNG+6]\nA bow that is both elegant and deadly.
+155	Golden Archer	[STR+585/ATS+30/SPD+10/RNG+6]\nAugmented by a strange ore. Emits a beautiful glow.
+156	Lambda Rod	[STR+55/RNG+4/Men Only]\nAn orbal staff for men. Designed by Reinford and Epstein.
+157	Lambda Rod +1	[STR+70/ATS+15/SPD+3/Men Only]\nAn orbal staff for men. Designed by Reinford and Epstein.
+158	Scalar Cane	[STR+90/RNG+4]\nAn orbal staff which conducts magical energy more effectively.
+159	Belta Rod	[STR+110/RNG+4]\nAn orbal staff for women. Designed by Reinford and Epstein.
+160	Variable Cane	[STR+120/ATS+25/SPD+3/RNG+4]\nAn orbal staff designed to convert energy more efficiently.
+161	Synchrotron	[STR+150/RNG+4]\nA new type of staff, capable of coping with varied situations.
+162	Lambda Rod +2	[STR+185/ATS+15/SPD+3/RNG+4/Men Only]\nAn orbal staff for men. Designed by Reinford and Epstein.
+163	Aerial Wand	[STR+185/ATS+25/SPD+3/RNG+4]\nAn orbal staff that uses the wind to increase its output.
+164	Libra Staff	[STR+225/RNG+4]\nAn orbal staff that glows like the stars in the night sky.
+165	Lambda Rod +3	[STR+260/ATS+15/SPD+3/RNG+4/Men Only]\nAn orbal staff for men. Designed by Reinford and Epstein.
+166	Stella Oak	[STR+260/ATS+25/SPD+3/RNG+4]\nA staff using an unusual material for its head to raise power.
+167	Ruby Wand	[STR+300/RNG+4]\nAn orbal staff with a beautiful ruby embedded in its head.
+168	Belta Rod +1	[STR+325/ATS+25/SPD+3/RNG+4/Women Only]\nAn orbal staff for women. Designed by Reinford and Epstein.
+169	Ruby Force	[STR+335/ATS+35/SPD+5/RNG+4]\nA staff modified to use all of the embedded gemstone's power.
+170	Vector Staff	[STR+375/RNG+4]\nA cutting-edge orbal staff created with advanced mathematics.
+171	Lambda Rod +4	[STR+410/ATS+15/SPD+3/RNG+4/Men Only]\nAn orbal staff for men. Designed by Reinford and Epstein.
+172	Glare Wand	[STR+410/ATS+35/SPD+5/RNG+4]\nA staff holding unrestricted power. Gives off a faint light.
+173	Closed-Delta	[STR+450/RNG+4]\nAn orbal staff known for its strange shape. Gathers energy.
+174	Belta Rod +2	[STR+475/ATS+25/SPD+3/RNG+4/Women Only]\nAn orbal staff for women. Designed by Reinford and Epstein.
+175	Open-Delta	[STR+485/ATS+35/SPD+5/RNG+4]\nAn orbal staff known for its strange shape. Diffuses energy.
+176	Faith Rod	[STR+525/RNG+4]\nA miraculous staff containing the prayers of a holy man.
+177	Blue Rhapsody	[STR+580/ATS+40/SPD+7/RNG+4/Men Only]\nAugmented by a strange ore. Generates beautiful music.
+178	Lunar Witch	[STR+570/ATS+50/SPD+7/RNG+4/Women Only]\nAugmented by a strange ore. Contains the power of the moon.
+179	\xe2\x97\x86\xe6\xad\xa6\xe5\x99\xa8\xef\xbc\x8800\xef\xbc\x89\xe6\x9c\xaa\xe4\xbd\xbf\xe7\x94\xa8	\xe3\x80\x90STR+90 RNG+2\xe3\x80\x91\n
+180	Braver	[STR+105/RNG+2]\nA solidly built two-handed sword. Beautiful and powerful.
+181	Broad Edge	[STR+135/RNG+2]\nA simply-designed two-handed sword. Powerful and heavy.
+182	Heavy Edge	[STR+165/SPD+3/RNG+2/Causes faint (5%)]\nA reinforced greatsword. Light to hold, heavy on impact.
+183	Braver +1	[STR+220/SPD+3/RNG+2/Causes faint (5%)]\nA solidly built two-handed sword. Beautiful and powerful.
+184	Braver +2	[STR+295/SPD+3/RNG+2/Causes faint (5%)]\nA solidly built two-handed sword. Beautiful and powerful.
+185	Bastard Sword	[STR+345/RNG+2]\nAn easy to use two-handed sword. Known for its slim blade.
+186	Zweihaender	[STR+380/SPD+5/RNG+2/Causes faint (10%)]\nA reinforced greatsword. Reforged to be stronger and longer.
+187	Titania	[STR+420/RNG+2]\nAn ornate two-handed sword. As powerful as it is beautiful.
+188	Durga	[STR+455/SPD+5/RNG+2/Causes faint (10%)]\nA powerful two-handed sword. Carved with a savage design.
+189	Braver +3	[STR+520/SPD+3/RNG+2/Causes faint (5%)]\nA solidly built two-handed sword. Beautiful and powerful.
+190	Grambringer	[STR+570/RNG+2]\nA giant two-handed sword. Too heavy for the weak to even hold.
+191	Valkyria	[STR+615/SPD+7/RNG+2/Causes faint (15%)\nAugmented by a strange ore. Contains a warrior maiden's vows.
+192	Buster Shot	[STR+90/RNG+6]\nA solidly-built, easy to use shotgun made by the RF Company.
+193	Buster Shot +1	[STR+145/SPD+3/RNG+6/Causes faint (5%)]\nA solidly-built, easy to use shotgun made by the RF Company.
+194	Needler SG50	[STR+185/RNG+6]\nThe Reinford Company's bestselling shotgun model.
+195	Gray Needler	[STR+220/SPD+3/RNG+6/Causes faint (5%)]\nA shotgun modified to increase firepower.
+196	Buster Shot +2	[STR+285/SPD+3/RNG+6/Causes faint (5%)]\nA solidly-built, easy to use shotgun made by the RF Company.
+197	Stinger SG30	[STR+335/RNG+6]\nA difficult to use shotgun that fires needle-shaped bullets.
+198	Bear Stinger	[STR+370/SPD+5/RNG+6/Causes faint (10%)]\nA shotgun modified for power. Rebuilt from the frame inward.
+199	Buster Shot +3	[STR+435/SPD+3/RNG+6/Causes faint (5%)]\nA solidly-built, easy to use shotgun made by the RF Company.
+200	Inferno Blazer	[STR+485/RNG+6]\nAn incredibly powerful shotgun that has unusually high recoil.
+201	Flare Cyclone	[STR+520/SPD+5/RNG+6/Causes faint (10%)]\nA shotgun that gains more power by releasing explosive blasts. 
+202	Blitz Blaster	[STR+560/RNG+6]\nAn assault shotgun designed for both speed and power.
+203	Subjugation Blaster	[STR+605/SPD+7/RNG+6/Causes faint (15%)]\nAugmented by a strange ore. Designed to crush all foes.
+204	Phantom SG Zero	[STR+535/RNG+6/Causes blind (20%)]\nA shotgun designed for low noise. Currently in development.
+205	Knight's Sword	[STR+70/RNG+1]\nA knight's sword designed for both combat and ritual use.
+206	Knight's Sword +1	[STR+135/ATS+10/SPD+5/RNG+1]\nA knight's sword designed for both combat and ritual use.
+207	Saber	[STR+175/RNG+1]\nA plain knight's sword with a beautiful blade.
+208	Sinclair	[STR+210/ATS+10/SPD+5/RNG+1]\nA sword with increased sharpness, but no excess decoration.
+209	Backsword	[STR+250/RNG+1]\nA sharply pointed sword used by knights in the Middle Ages.
+210	Walloon Sword	[STR+285/ATS+10/SPD+5/RNG+1]\nA sword with a modified hilt that makes it easier to use.
+211	Knight's Sword +2	[STR+350/ATS+10/SPD+5/RNG+1]\nA knight's sword designed for both combat and ritual use.
+212	Lombardia	[STR+400/RNG+1]\nA traditional knight's sword. Used since the Middle Ages.
+213	Katzbalger	[STR+435/ATS+20/SPD+7/RNG+1]\nA sword with an s-shaped guard. Ideal for melee combat.
+214	Knight's Sword +3	[STR+500/ATS+10/SPD+5/RNG+1]\nA knight's sword designed for both combat and ritual use.
+215	Edel Saber	[STR+550/RNG+1]\nAn elegantly decorated sword. Made using traditional means.
+216	Holy Order	[STR+595/ATS+30/SPD+10/RNG+1]\nAugmented by a strange ore. Radiates untainted light.
+217	\xe2\x97\x86\xe6\xad\xa6\xe5\x99\xa8\xef\xbc\x8800\xef\xbc\x89\xe6\x9c\xaa\xe4\xbd\xbf\xe7\x94\xa8	\xe3\x80\x90STR+65 RNG+1\xe3\x80\x91\n
+218	Dual Edge	[STR+130/RNG+1]\nA pair of gunswords. Designed with a focus on usability.
+219	Karambit	[STR+170/RNG+1]\nGunswords with sharply curved blades. Loved by mercenaries. 
+220	Double Skinner	[STR+205/SPD+3/EVA+5%/RNG+1]\nGunswords customized to be sharper. Ideal for hunting.
+221	Dual Edge +1	[STR+270/SPD+3/EVA+5%/RNG+1]\nA pair of gunswords. Designed with a focus on usability.
+222	Gemini Star	[STR+320/RNG+1]\nA pair of gunswords with slightly different capabilities.
+223	Odd-Eye	[STR+355/SPD+5/EVA+10%/RNG+1]\nA pair of differently shaped gunswords. Used by experts.
+224	Dual Edge +2	[STR+420/SPD+3/EVA+5%/RNG+1]\nA pair of gunswords. Designed with a focus on usability.
+225	Strider	[STR+470/RNG+1]\nLight and easy to use gunswords. Ideal for swift attacks.
+226	Avenger	[STR+505/SPD+5/EVA+10%/RNG+1]\nGunswords customized to be more powerful and easier to use.
+227	Sword Breaker	[STR+545/RNG+1]\nGunswords with an unusual shape to hook on to a foe's sword.
+228	Vert Venti	[STR+590/SPD+7/EVA+15%/RNG+1]\nAugmented by a strange ore. Makes their bearer like the wind.
+229	Black Raid	[STR+515/RNG+1/Causes death (10%)]\nJet black gunswords fitted with Reinford's latest gun unit.
+230	Cross Spear	[STR+85/RNG+3]\nA cross-shaped spear. The blades represent land and wind.
+231	Cross Spear +1	[STR+100/SPD+3/EVA+5%/RNG+3]\nA cross-shaped spear. The blades represent land and wind.
+232	Cross Spear +2	[STR+150/SPD+3/EVA+5%/RNG+3]\nA cross-shaped spear. The blades represent land and wind.
+233	Cross Spear +3	[STR+215/SPD+3/EVA+5%/RNG+3]\nA cross-shaped spear. The blades represent land and wind.
+234	Long Pike	[STR+265/RNG+3]\nA spear which has remained unchanged since the Middle Ages.
+235	Gladiator Spear	[STR+300/SPD+3/EVA+5%/RNG+3]\nA reinforced spear. Forged for a ferocious warrior.
+236	Cross Spear +4	[STR+365/SPD+3/EVA+5%/RNG+3]\nA cross-shaped spear. The blades represent land and wind.
+237	Partisan	[STR+415/RNG+3]\nA spear with a long shaft and wide blade.
+238	Corsesca	[STR+450/SPD+5/EVA+10%/RNG+3]\nA reinforced spear with wing-like blades attached to its neck.
+239	Cross Spear +5	[STR+515/SPD+3/EVA+5%/RNG+3]\nA cross-shaped spear. The blades represent land and wind.
+240	Dragoon Lance	[STR+565/RNG+3]\nA lance used by Middle Ages dragoons. Ideal for rushing.
+241	Astra Hawk	[STR+610/SPD+7/EVA+15%/RNG+3]\nAugmented by a strange ore. Draws in swirling winds.
+242	\xe2\x97\x86\xe6\xad\xa6\xe5\x99\xa8\xef\xbc\x8800\xef\xbc\x89\xe6\x9c\xaa\xe4\xbd\xbf\xe7\x94\xa8	\xe3\x80\x90STR+95 RNG+3\xe3\x80\x91\n
+243	Breaker Arm	[STR+310/RNG+3]\nAirgetlam's arm. Sturdy and incredibly powerful.
+244	Breaker Arm +1	[STR+375/SPD+3/RNG+3/Causes faint (5%)]\nAirgetlam's arm. Sturdy and incredibly powerful.
+245	Chrome Claw	[STR+425/RNG+3]\nA silvery-white claw capable of cutting into earth and iron.
+246	Wild Claw	[STR+460/SPD+5/RNG+3/Causes faint (10%)]\nA claw that has been reforged for added hardness.
+247	Breaker Arm +2	[STR+525/SPD+3/RNG+3/Causes faint (5%)]\nAirgetlam's arm. Sturdy and incredibly powerful.
+248	Mighty Arm	[STR+575/RNG+3]\nA giant gauntlet forged specially for Airgetlam.
+249	Divine Gear	[STR+620/SPD+7/RNG+3/Causes faint (15%)]\nAugmented by a strange ore. Glistens radiantly.
+250	\xe2\x97\x86\xe6\xad\xa6\xe5\x99\xa8\xef\xbc\x88\xe4\xba\x8c\xe4\xb8\x81\xe6\x8b\xb3\xe9\x8a\x8300\xef\xbc\x89\xe6\x9c\xaa\xe4\xbd\xbf\xe7\x94\xa8	\xe3\x80\x90STR+75 RNG+5\xe3\x80\x91\n
+251	Trickster	[STR+290/RNG+5]\nEasy to use pistols that make unusual combat styles possible.
+252	Trickster	[STR+355/RNG+5]\nEasy to use pistols that make unusual combat styles possible.
+253	Trickster +1	[STR+430/SPD+3/EVA+5%/RNG+5]\nEasy to use pistols that make unusual combat styles possible.
+254	Colt & Pony	[STR+480/RNG+5]\nA pair of pistols made by Reinford. Deadlier than they look.
+255	Double Mustang	[STR+515/SPD+5/EVA+10%/RNG+5]\nA pair of pistols customized for pure, unrestricted power.
+256	Shadow Jack	[STR+555/RNG+5]\nA pair of pistols that blend in to darkness.
+257	Crime & Punishment	[STR+600/SPD+7/EVA+15%/RNG+5]\nAugmented by a strange ore. Designed to punish sinners.
+258	Fire & Ice	[STR+525/RNG+5/Causes burn (10%)/freeze (10%)]\nA pair of pistols that fire bullets of different elements.
+259	Diablo & Pain	[STR+500/EVA+15%/RNG+1]\nAn orbal gun named 'Diablo' and a special blade called 'Pain'.
+260	Platinum Fists	[STR+530/EVA+10%/RNG+1/Causes faint (5%)]\nDeadly gauntlets made of brilliant platinum.
+261	Leather Guard	[DEF+50/ADF+15]\nA leather vest designed to resist light shocks.
+262	Border Print T-Shirt	[DEF+70/ADF+50/EVA+5%/Men Only]\nA t-shirt with a border print design. Made of light material.
+263	White Blouse	[DEF+65/ADF+55/EVA+5%/Women Only]\nA refreshingly white blouse.
+264	Armored Vest	[DEF+80/ADF+20]\nA vest reinforced with an iron breastplate.
+265	Fiber Guard	[DEF+120/ADF+30]\nA protective garment woven from special fibers.
+266	Cotton Shirt	[DEF+100/SPD+3]\nA simple shirt. Made of soft-to-the-touch-cotton.
+267	Silver Jacket	[DEF+135/ADF+100/STR+3/Men Only]\nA shiny silver jacket that isn't excessively flashy.
+268	Golden Dress	[DEF+130/ADF+105/ATS+3/Women Only]\nA dazzling golden dress that accentuates any look.
+269	Sturdy Leather	[DEF+180/ADF+45]\nA sturdy vest. Made of tanned leather.
+270	Earth Vest	[DEF+175/ADF+85/STR+5/Men Only]\nA thick vest that symbolizes earth. Primarily white in color.
+271	Wind Robe	[DEF+170/ADF+90/ATS+5/Women Only]\nA light robe that symbolizes wind. Primarily green in color.
+272	Leopard Print Jacket	[DEF+210/ADF+155/STR+7/EVA+5%/Men Only]\nA jacket that captures the attention of those who look at it.
+273	Frilly Dress	[DEF+205/ADF+160/ATS+7/EVA+5%/Women Only]\nA charming one-piece dress decorated with countless frills.
+274	Titanium Coat	[DEF+240/ADF+60]\nA coat reinforced with a hard metal. Used by the military.
+275	Red Jacket	[DEF+220/ADF+165/EVA+10%]\nA jacket dyed in a passionate, vivid red color.
+276	Blue Tunic	[DEF+265/ADF+65]\nA long garment with a distinctive, refreshing blue color.
+277	Golden Mail	[DEF+250/ADF+50/EVA+10%]\nIncredibly light mail made using special golden wires.
+278	Lunar Robe	[DEF+280/ADF+210/ATS+15]\nA robe woven from hemp. Once worn by a highly pious monk.
+279	Battle Coat	[DEF+320/ADF+80]\nA sturdy, comfortable coat favored by the Imperial Army.
+280	Thick Jumpsuit	[DEF+305/STR+15]\nA sturdy jumpsuit loved by Reinford laborers.
+281	General's Cape	[DEF+335/ADF+250/STR+5/ATS+5]\nA replica of the cape worn by officers in the Imperial Army.
+282	Shield Jacket	[DEF+360/ADF+90]\nA jacket reinforced with numerous protective plates.
+283	Ares Armor	[DEF+380/ADF+285/STR+20/ATS+10/Men Only]\nAn armor made of glowing septium. Protects wearer with light.
+284	Aurelia Dress	[DEF+375/ADF+290/ATS+20/STR+10/Women Only]\nA dress made of glowing septium. Protects wearer with light.
+285	Aura Jacket	[DEF+420/ADF+420]\nA jacket woven from radiant thread. Granted to a top student.
+286	Leather Shoes	[DEF+25/MOV+1]\nA light, comfortable pair of shoes with a beautiful shine.
+287	Sunny Sandals	[DEF+35/MOV+1/SPD+1/EVA+5%/Men Only]\nLight sandals featuring bright yellow as an accent color.
+288	Pink High Heels	[DEF+35/MOV+1/SPD+3/Women Only]\nA pair of cute, pink high heels, popular with women.
+289	Metal Spikes	[DEF+40/MOV+1]\nSturdy spiked shoes made from a metal that resists rust.
+290	Fiber Boots	[DEF+60/MOV+1]\nProtective boots woven from special fibers.
+291	Rubber Soles	[DEF+50/MOV+3/SPD+1]\nAffordable, comfortable shoes, loved by the working class.
+292	Noble Leather	[DEF+70/MOV+1/SPD+1/EVA+5%/Men Only]\nMeticulously crafted shoes, made with the finest materials.
+293	Glittering Mules	[DEF+70/MOV+1/SPD+3/Women Only]\nHigh class mules made using glittering thread.
+294	Rigid Shoes	[DEF+90/MOV+2]\nSturdy spiked shoes made with a resistant material.
+295	Frost Shoes	[DEF+80/MOV+2/SPD+1/EVA+5%/Men Only]\nShoes made from wool and hemp. Cool in summer, warm in winter.
+296	Star Shoes	[DEF+80/MOV+2/SPD+3/Women Only]\nShoes made from wool and silk. Extremely gentle on your feet.
+297	Feathered Shoes	[DEF+105/MOV+2/EVA+10%/Men Only]\nVery light shoes. The ornamental feathers draw attention.
+298	Leaf Sandals	[DEF+105/MOV+2/SPD+5/Women Only]\nCool, fashionable green sandals. Easy to move around in.
+299	Military Spikes	[DEF+120/MOV+3]\nSpiked shoes with disruptive patterning. Used by the military.
+300	Red Shoes	[DEF+110/MOV+3/SPD+3/EVA+5%]\nLeather shoes dyed in a passionate, vivid red color.
+301	Ladies' Stregas	[DEF+110/MOV+3/STR+15/EVA+5%/Women Only]\nFashionable, functional sneakers made by the Strega Corporation.
+302	Hiking Shoes	[DEF+135/MOV+3]\nShoes designed especially for traversing rough terrain.
+303	Golden Thread Shoes	[DEF+125/MOV+3/SPD+5]\nIncredibly light shoes made using special golden thread.
+304	Dawn Boots	[DEF+140/MOV+3/EVA+5%]\nLegendary boots said to have been worn by the Eisenritter.
+305	Battle Boots	[DEF+160/MOV+4]\nSturdy, comfortable shoes favored by the Imperial Army.
+306	Haken Boots	[DEF+150/MOV+4/STR+5]\nReinforced spiked shoes designed for climbing mountains.
+307	General's Boots	[DEF+170/MOV+4/EVA+5%]\nA replica of the boots worn by officers in the Imperial Army.
+308	Accel Gear	[DEF+180/MOV+4]\nSpiked shoes designed for battle. Light and protective.
+309	Orion Boots	[DEF+190/MOV+5/SPD+3/EVA+10%/Men Only]\nBoots with a golden glow, worn by knights in the Middle Ages.
+310	Kaleido Boots	[DEF+190/MOV+5/SPD+7/EVA+5%/Women Only]\nBoots with a silver glow, worn by knights in the Middle Ages.
+311	Strega-A1	[DEF+175/MOV+15]\nA made-to-order pair of Strega sneakers. For students.
+312	Silver Earring	[Prevents Poison]\nA silver earring blessed with the power of the Goddess Aidios.
+313	Coral Ring	[Prevents Seal]\nA ring decorated with beautiful deep-water coral.
+314	Marble Ring	[Prevents Mute]\nAn eye-catching ring with a beautiful marble effect.
+315	White Glasses	[Prevents Blind]\nGlasses that glow faintly, allowing you to see in the dark.
+316	Black Bangle	[Prevents Sleep]\nA bangle made of leather that digs into your wrist.
+317	Cool Necklace	[Prevents Burn]\nA necklace set with water sepith.
+318	Lighter	[Prevents Freeze]\nAn amulet carried by mountain climbers to ward off the cold.
+319	Stone Brooch	[Prevents Petrify]\nA brooch set with an exquisite shining stone.
+320	Citrus Bottle	[Prevents Faint]\nA bottle-shaped charm filled with an invigorating fragrance.
+321	Floral Bottle	[Prevents Confuse]\nA bottle-shaped charm filled with a soothing fragrance.
+322	Holy Chain	[Prevents Deathblows]\nA gold chain, blessed with sacred prayers.
+323	Grail Locket	[Prevents all abnormal status (except K.O.)]\nAn accessory modeled on an artifact passed down in the church.
+324	Silver Chain	[DEF+10/Prevents Poison]\nA chain stitched bracelet blessed with the power of Aidios.
+325	Coral Bracelet	[STR+5/Prevents Seal]\nA flamboyant bracelet set with numerous small corals.
+326	Marble Bracelet	[ATS+5/Prevents Mute]\nA luxurious bracelet set with marble.
+327	Luminous Glasses	[ACC+50%/Prevents Blind]\nSpecial glasses that allow the wearer to see even at night.
+328	Energy Bandana	[EVA+5%/Prevents Sleep/Nightmare]\nA bandana that energizes its wearer.
+329	Cooling Belt	[ATS+10/Prevents Burn]\nA belt that cools the body when worn.
+330	Cozy Socks	[STR+10/Prevents Freeze]\nSocks that keep your feet warm and toasty.
+331	Soft Stole	[DEF+10/ADF+10/Prevents Petrify]\nA soft and comfortable stole.
+332	Orange Cape	[STR+15/Prevents Faint]\nA vivid orange colored cape.
+333	Prismatic Cape	[ATS+15/Prevents Confuse]\nA colorful cape that shines in seven different colors.
+334	Holy Sphere	[HP+800/Prevents Deathblows]\nA pure white ornament, blessed with sacred prayers.
+335	Yellow Pendulum	[Prevents Seal/Mute]\nA pendulum-shaped accessory, decorated with earth sepith.
+336	Blue Pendulum	[Prevents Poison/Blind/Burn]\nA pendulum-shaped accessory, decorated with water sepith.
+337	Red Pendulum	[Prevents Freeze/Petrify/Stat Down]\nA pendulum-shaped accessory, decorated with fire sepith.
+338	Green Pendulum	[Prevents Sleep/Nightmare/Faint/Confuse]\nA pendulum-shaped accessory, decorated with wind sepith.
+339	Deep Ocher	[DEF+50/ADF+50/SPD+5/Prevents Seal/Mute]\nA gem made from high purity amberl. Emits an amber glow.
+340	Still Blue	[ATS+50/Prevents Poison/Blind/Burn]\nA gem made from high purity sapphirl. Emits a blue glow.
+341	Passionate Rouge	[STR+50/Prevents Freeze/Petrify/Stat Down]\nA gem made from high purity carnelia. Emits a red glow.
+342	Evergreen	[ACC+50%/EVA+10%/SPD+5/Prevents Sleep/Faint/Nightmare/Confuse]\nA gem made from high purity esmelas. Emits a green glow.
+343	Abyss Shadow	[SPD+15/Prevents Deathblows/Delay/Vanish]\nA gem made from jet-black nohval. Glows faintly.
+344	Proxy Puppet	[Prevents K.O.]\nRevives on K.O. with 10% HP once, but breaks afterwards.
+345	Gladiator Headband	[STR+5/CP Up]\nA motivating headband. CP recovery rate rises in battle.
+346	Gladiator Belt	[STR+5/DEF+5/Auto-CP Up]\nA motivating belt. CP automatically recovers in battle.
+347	Swordtail Badge	[HP+100/ACC+25%/SPD+3]\nA badge with a picture of a swordtail on it. Part of a set.
+348	Carp Badge	[HP+250/ACC+50%/DEF+10]\nA badge with a picture of a carp on it. Part of a set.
+349	Salmon Badge	[HP+500/ACC+100%/STR+15]\nA badge with a picture of a salmon on it. Part of a set.
+350	Ceramic Ring	[ATS+3/ADF+3]\nA ring made from ceramic. Pretty but fragile.
+351	ZCF Light	[ACC+25%/Prevents Blind]\nA small accessory light made at Zeiss Central Factory.
+352	Frog Strap	[EP+20/SPD+2]\nA strap with a figurine of a frog attached. Part of a set.
+353	Puppy Strap	[HP+200/STR+2]\nA strap with a figurine of a puppy attached. Part of a set.
+354	Kitty Strap	[EP+50/ATS+5]\nA strap with a figurine of a kitten attached. Part of a set.
+355	Horseman's Cap	[STR+4/SPD+2]\nA luxuriously designed cap for refined horse riders.
+356	Highland Cloth	[STR+5/ATS+5]\nCloth woven in the nomadic settlement. Multipurpose.
+357	Silver Hourglass	[ATS+5/SPD+3]\nA small silver charm. Modeled after an hourglass.
+358	Golden Hourglass	[STR+7/SPD+3]\nA small gold charm. Modeled after an hourglass.
+359	Fairy Brooch	[ATS+10/ADF+10/SPD+2/Prevents Confuse]\nA charming brooch with a design resembling a fairy's feathers.
+360	Fairy Necklace	[ATS+10/ADF+10/SPD+2/Prevents Sleep/Nightmare]\nA cute necklace with a design resembling a fairy's feathers.
+361	Mechanic's Goggles	[EP+100/Prevents Blind]\nGoggles that allow mechanics to focus on their work.
+362	Reinford Medal	[STR+7/DEF+7/ATS+7/ADF+7]\nA memorial medal with the Reinford Company logo carved on it.
+363	Pikkard Plush	[HP+100/DEF/ADF+5]\nA plush of a strange yet lovable creature. Smells oddly sweet.
+364	Kobold Plush	[EVA+5%]\nA plush of a strange yet lovable creature.
+365	Sitting Mishy	[DEF+5/SPD+2]\nA strap featuring Mishy. Part of a set.
+366	Napping Mishy	[ADF+10/SPD+2]\nA strap featuring Mishy. Part of a set.
+367	Running Mishy	[SPD+5/MOV+5]\nA strap featuring Mishy. Part of a set.
+368	Medal of Fortitude	[STR+5/Prevents Faint]\nA medal given to high-achieving students. Raises motivation.
+369	Medal of Discipline	[SPD+3/Prevents Delay]\nA medal given to high-achieving students. Focuses wearer.
+370	Medal of Vigor	[STR+10/ATS+10/Prevents Stat Down]\nA medal given to high-achieving students. Energizes wearer.
+371	Medal of Dawn	[STR/ATS/DEF/ADF+75/Prevents Delay/Abnormal status/Stat Down]\nAn esteemed medal given to students who reach Rank A0.
+372	Medal of Valor	[STR+25/SPD+5]\nOne of the four Lionheart Medals. Given by Instructor Makarov.
+373	Medal of Friendship	[HP+1000/DEF+25/ADF+25]\nOne of the four Lionheart Medals. Given by Instructor Mary.
+374	Medal of Compassion	[EP+100/ATS+25]\nOne of the four Lionheart Medals. Given by Instructor Beatrix.
+375	Medal of Heroism	[STR+50/ATS+50]\nThe most revered Lionheart Medal. Given by Principal Vandyck.
+376	Class VII Uniform	The distinctive red uniform supplied to Class VII.
+377	Thors Summer Uniform	Thors Military Academy's summer uniform. Students are free to\nmake tweaks and adjustments to it.
+378	Academy Swimsuit	A standard swimsuit worn during swimming lessons.
+379	Stage Outfit	A fancy outfit worn during Class VII's festival concert.
+380	Class VII Uniform	The distinctive red uniform supplied to Class VII.
+381	Rean - Awakened (Dev Use)	Rean - Awakened (Dev Use)
+382	Rean - Long Sleeves (Dev Use)	Rean - Long Sleeves (Dev Use)
+383	Rean's Pajamas	Not just for nights anymore.
+384	Rean's Shirt	A shirt Rean likes to wear.
+385	Rean's Sleeveless Shirt	A sleeveless shirt Rean likes to wear.
+386	Alisa's Lacrosse Wear	The uniform worn by the Lacrosse Club.
+387	Emma's Pajamas	Book and herbal tea not included.
+388	Jusis' Pajamas	Only the finest in noble sleepwear.
+389	Gaius' Traditional Garb	Traditional clothing from Nord.
+390	Special Ops Uniform	Worn by Millium on SUPER SECRET missions and stuff.
+391	Thors Standard Uniform	Crow's standard-issue Thors uniform.
+392	Sara's Swimwear 	Sara's special instructor swimwear. A+.
+393	\xe2\x97\x86	\xe2\x97\x86
+394	\xe2\x97\x86	\xe2\x97\x86
+395	\xe2\x97\x86	\xe2\x97\x86
+396	\xe2\x97\x86	\xe2\x97\x86
+397	\xe2\x97\x86	\xe2\x97\x86
+398	\xe2\x97\x86	\xe2\x97\x86
+399	\xe2\x97\x86	\xe2\x97\x86
+400	\xe2\x97\x86	\xe2\x97\x86
+401	\xe2\x97\x86	\xe2\x97\x86
+402	\xe2\x97\x86	\xe2\x97\x86
+403	\xe2\x97\x86	\xe2\x97\x86
+404	\xe2\x97\x86	\xe2\x97\x86
+405	\xe2\x97\x86	\xe2\x97\x86
+406	\xe2\x97\x86	\xe2\x97\x86
+407	\xe2\x97\x86	\xe2\x97\x86
+408	\xe2\x97\x86	\xe2\x97\x86
+409	\xe2\x97\x86	\xe2\x97\x86
+410	\xe2\x97\x86	\xe2\x97\x86
+411	\xe2\x97\x86	\xe2\x97\x86
+412	\xe2\x97\x86	\xe2\x97\x86
+413	\xe2\x97\x86	\xe2\x97\x86
+414	\xe2\x97\x86	\xe2\x97\x86
+415	\xe2\x97\x86	\xe2\x97\x86
+416	\xe2\x97\x86	\xe2\x97\x86
+417	\xe2\x97\x86	\xe2\x97\x86
+418	\xe2\x97\x86	\xe2\x97\x86
+419	\xe2\x97\x86	\xe2\x97\x86
+420	\xe2\x97\x86	\xe2\x97\x86
+421	\xe2\x97\x86	\xe2\x97\x86
+422	\xe2\x97\x86	\xe2\x97\x86
+423	\xe2\x97\x86	\xe2\x97\x86
+424	\xe2\x97\x86	\xe2\x97\x86
+425	\xe2\x97\x86	\xe2\x97\x86
+426	\xe2\x97\x86	\xe2\x97\x86
+427	\xe2\x97\x86	\xe2\x97\x86
+428	\xe2\x97\x86	\xe2\x97\x86
+429	\xe2\x97\x86	\xe2\x97\x86
+430	\xe2\x97\x86	\xe2\x97\x86
+431	\xe2\x97\x86	\xe2\x97\x86
+432		
+433		
+434		
+435		
+436		
+437		
+438		
+439		
+440		
+441		
+442		
+443		
+444		
+445		
+446		
+447		
+448		
+449		
+450		
+451		
+452		
+453		
+454		
+455		
+456		
+457		
+458		
+459		
+460		
+461		
+462		
+463		
+464		
+465		
+466		
+467		
+468		
+469		
+470		
+471		
+472		
+473		
+474		
+475		
+476		
+477		
+478		
+479		
+480		
+481		
+482		
+483		
+484		
+485		
+486		
+487		
+488		
+489		
+490		
+491		
+492		
+493		
+494		
+495		
+496		
+497		
+498		
+499		
+500		
+501		
+502		
+503	Kitty Ears	Cute ears you can wear to embody feline grace...or laziness.
+504	Ride-Along Bear	Need an adventuring buddy? Let this friendly bear come along!
+505	Ride-Along Bunny	Need an adventuring buddy? Let this friendly bunny come along!
+506	Student Council Band	An armband worn by members of the Student Council.
+507	Force	Fire elemental master quartz. \nKilling enemies restores CP.
+508	Canon	Water elemental master quartz. \nIncreases potency of healing arts.
+509	Falco	Wind elemental master quartz. \nGain insight status.
+510	Angel	Space elemental master quartz.\nAutomatically recover from K.O.
+511	Brave	Fire elemental master quartz.\nObtain a significant STR bonus.
+512	Scepter	Water elemental master quartz.\nObtain sepith from attacks/crafts.
+513	Iron	Earth elemental master quartz.\nObtain a significant DEF/ADF bonus.
+514	Mistral	Wind elemental master quartz.\nObtain a significant ATS bonus.
+515	Raven	Time elemental master quartz.\nObtain a significant SPD bonus.
+516	Mirage	Mirage elemental master quartz.\nKilling enemies restores EP.
+517	Wing	Wind elemental master quartz.\nPrevents abnormal status/stat down.
+518	Moebius	Space elemental master quartz.\nIncreases potency of healing items.
+519	Aries	Water elemental master quartz.\nRecover HP through offensive arts.
+520	Criminal	Fire elemental master quartz.\nOffensive arts deal critical damage.
+521	Tauros	Earth elemental master quartz.\nAttacks do more damage, but delay afterwards is longer.
+522	Aegis	Earth elemental master quartz.\nReflect magic damage and gain immunity against physical damage.
+523	Cypher	Time elemental master quartz.\nAttacks/crafts cause stat down.
+524	Pandora	Mirage elemental master quartz.\nDamage of offensive arts is raised, but more EP consumed.
+525	Katze	Time elemental master quartz.\nAbsorb enemy magic damage.
+526	Megalith	Earth elemental master quartz.\nIncreases obtained EXP.
+527	Juggler	Mirage elemental master quartz.\nAttacks/crafts inflict random abnormalities.
+528	Murakumo	Time elemental master quartz.\nAttacks/crafts sometimes deal critical damage.
+529	Vermillion	Fire elemental master quartz.\nIncreases physical damage relative to how high HP is.
+530	Orochi	Water elemental master quartz.\nRandomly increases physical damage.
+531	Chevalier	Space elemental master quartz.\nIncreases physical damage relative to how low HP is.
+532	Thor	Wind elemental master quartz.\nRecover HP/EP through attacks/crafts.
+533	Magius	Mirage elemental master quartz.\nIncreases magic damage relative to how low HP is.
+534	Emblem	Space elemental master quartz.\nDecreases damage received relative to how low HP is.
+535	Emblem	Space elemental master quartz.\nDecreases damage received relative to how low HP is.
+536	Thor	Wind elemental master quartz.\nRecover HP/EP through attacks/crafts.
+537		
+538		
+539		
+540		
+541		
+542		
+543		
+544		
+545		
+546		
+547		
+548		
+549		
+550		
+551		
+552		
+553		
+554		
+555		
+556		
+557		
+558		
+559		
+560		
+561		
+562		
+563		
+564	Harvest	[#32I(SR) Earth Pulse/La Crest/Grand Press]\nHP+200/DEF+5/ATS+5
+565		
+566	\x02\x1c	
+567		
+568		
+569		
+570		
+571		
+572		
+573		
+574		
+575		
+576		
+577		
+578		
+579		
+580		
+581		
+582		
+583		
+584		
+585		
+586		
+587		
+588		
+589		
+590		
+591		
+592		
+593		
+594		
+595	\x01(	
+596		
+597		
+598		
+599	Flood	[#33I(SR) Hydro Cannon/Crystal Flood/Athelas]\nHP+800/EP+80/ATS+10
+600		
+601		
+602		
+603		
+604		
+605		
+606		
+607		
+608		
+609		
+610		
+611		
+612		
+613		
+614		
+615		
+616		
+617		
+618		
+619		
+620		
+621		
+622		
+623		
+624		
+625		
+626		
+627		
+628		
+629		
+630		
+631		
+632	Hellfire	[#34I(SR) Flame Tongue/Volcanic Rain/Flare Bomb]\nEP+100/ATS+10
+633		
+634		
+635		
+636		
+637		
+638		
+639		
+640		
+641		
+642		
+643		
+644		
+645		
+646		
+647		
+648		
+649		
+650		
+651		
+652		
+653		
+654		
+655		
+656		
+657		
+658		
+659	Scent	[#35I(R) Aerial/Grand Press/Dark Matter]\nMakes enemies more likely to notice you.
+660		
+661		
+662	Breeze	[#35I(SR) Aerial/Breath/Recuria]\nEP+40/ATS+5
+663		
+664		
+665		
+666		
+667		
+668		
+669		
+670		
+671		
+672		
+673		
+674		
+675		
+676		
+677		
+678		
+679		
+680		
+681		
+682		
+683		
+684		
+685		
+686		
+687		
+688		
+689		
+690		
+691	Reaper	[#36I(SR) Demonic Scythe/Frost Edge/Spark Arrow]\nATS+5/SPD+2
+692		
+693	Skanda Gem	[#36I(SR) Chrono Drive/Chrono Break/Chrono Burst]\nSPD+15
+694		
+695		
+696		
+697		
+698		
+699		
+700		
+701		
+702		
+703		
+704		
+705		
+706		
+707		
+708		
+709		
+710		
+711		
+712		
+713		
+714		
+715		
+716		
+717		
+718		
+719	\x02d	
+720		
+721		
+722		
+723		
+724		
+725		
+726		
+727		
+728		
+729		
+730		
+731		
+732		
+733		
+734		
+735		
+736		
+737		
+738		
+739		
+740		
+741		
+742		
+743		
+744		
+745		
+746		
+747		
+748		
+749	Chakravarti Gem	[#38I(SR) Silver Thorn/Saintly Force/Crescent Mirror]\nEP+180
+750	Thors Faceplate	An ARCUS cover for Class VII with a lion on a red background.
+751	Special Ops Faceplate	An ARCUS cover designed for special ops.
+752	Thors Faceplate - Black	An official Thors Military Academy ARCUS cover.
+753	Thors Faceplate - Red	An official Thors Military Academy ARCUS cover.
+754	\xe2\x97\x86	\xe2\x97\x86
+755		
+756		
+757		
+758		
+759		
+760		
+761		
+762		
+763		
+764		
+765		
+766		
+767		
+768		
+769		
+770	Beginner Rod	A lightweight rod that lets you feel even the\nslightest tug. Ideal for catching small fish.
+771	Deluxe Rod	A standard rod, modified to be easy to use.\nIdeal for catching medium sized fish.
+772	Lakelord Star	An exceptionally sturdy rod that can withstand\nthe mightiest catch. Ideal for catching large fish.
+773	Groundbait	A bait designed to lure in fish. Increases the\nnumber of times you can fish at a specific spot.
+774	Earth Sepith	\xe2\x97\x86
+775	Water Sepith	\xe2\x97\x86
+776	Fire Sepith	\xe2\x97\x86
+777	Wind Sepith	\xe2\x97\x86
+778	Time Sepith	\xe2\x97\x86
+779	Space Sepith	\xe2\x97\x86
+780	Mirage Sepith	\xe2\x97\x86
+781	Sepith Mass	\xe2\x97\x86
+782	All Element Sepith	\xe2\x97\x86
+783	Notebook - Main	\xe2\x97\x86
+784	Notebook - Quest	\xe2\x97\x86
+785	Notebook - Battle	\xe2\x97\x86
+786	Notebook - Character	\xe2\x97\x86
+787	Recipe Book	\xe2\x97\x86
+788	Fishing Book	\xe2\x97\x86
+789	Notebook - Books	\xe2\x97\x86
+790	Notebook - A.Voice	\xe2\x97\x86
+791	Notebook - Help	\xe2\x97\x86
+792	Imperial Chronicle - Issue 1	Issue 1 [Budget and Military Expansion Plans Unveiled]\nHow will both chambers react to the chancellor's plans?
+793	Imperial Chronicle - Issue 2	Issue 2 [The Imperial Provincial Council Meets]\nThe Four Great Houses convene. Also: Violence in Crossbell?
+794	Imperial Chronicle - Issue 3	Issue 3 [The RFTF is here! All the latest tech on show]\nChairman Irina Reinford shares her vision for the future.
+795	Imperial Chronicle - Issue 4	Issue 4 [The Heimdallr Summer Festival Approaches!]\nAttendees listed! Who will Princess Alfin dance with?
+796	Imperial Chronicle - Issue 5	Issue 5 [Special Issue - The Heimdallr Summer Festival]\nThis year's highlights, plus an interview with the RMP!
+797	Imperial Chronicle - Issue 6	Issue 6 [The Imperial Liberation Front Still at Large!]\nTerrorists attack! Plus the latest on the Imperial family.
+798	Imperial Chronicle - Issue 7	Issue 7 [History's First International Conference Begins]\nWho's going to be in attendance? Plus, the Orchis Tower!
+799	Imperial Chronicle - Issue 8	Issue 8 [Terrorism at the Trade Conference]\nAll the details on the attack and how it was resolved!
+800	Imperial Chronicle - Issue 9	Issue 9 [The Courageous Takes Flight!]\nExclusive interview with Prince Olivert!
+801	Imperial Chronicle - Issue 10	Issue 10 [The Imperial Liberation Front Meets its end!]\nA stunning achievement for the Railway Military Police!
+802	Imperial Chronicle - Issue 11	Issue 11 [Breaking News -- Garrelia Fortress is no More!]\nHis Majesty speaks. Now is the time to be strong, Erebonians!
+803	Carnelia Reprint - Chapter 1	Part 1 of a popular novel published in Liberl.
+804	Carnelia Reprint - Chapter 2	Part 2 of a popular novel published in Liberl.
+805	Carnelia Reprint - Chapter 3	Part 3 of a popular novel published in Liberl.
+806	Carnelia Reprint - Chapter 4	Part 4 of a popular novel published in Liberl.
+807	Carnelia Reprint - Chapter 5	Part 5 of a popular novel published in Liberl.
+808	Carnelia Reprint - Chapter 6	Part 6 of a popular novel published in Liberl.
+809	Carnelia Reprint - Chapter 7	Part 7 of a popular novel published in Liberl.
+810	Carnelia Reprint - Chapter 8	Part 8 of a popular novel published in Liberl.
+811	Carnelia Reprint - Chapter 9	Part 9 of a popular novel published in Liberl.
+812	Carnelia Reprint - Chapter 10	Part 10 of a popular novel published in Liberl.
+813	Carnelia Reprint - Finale	The finale of a popular novel published in Liberl.
+814	Erebonian Public Transport	Erebonian Public Transport
+815	Erebonian Folklore: Vol. 1	Erebonian Folklore: Vol. 1
+816	Erebonian Sports	Erebonian Sports
+817	Erebonian Mass Media	Erebonian Mass Media
+818	Erebonian Folklore: Vol. 2	Erebonian Folklore: Vol. 2
+819	Reinford Group: Past to Present	Reinford Group: Past to Present
+820	Erebonian Folklore: Vol. 3	Erebonian Folklore: Vol. 3
+821	Manly Munchies - Omelets	A cookbook marketed toward men. Use it to learn a recipe.
+822	Manly Munchies - Cookies	A cookbook marketed toward men. Use it to learn a recipe.
+823	Manly Munchies - Juice	A cookbook marketed toward men. Use it to learn a recipe.
+824	Manly Munchies - Sandwiches	A cookbook marketed toward men. Use it to learn a recipe.
+825	Manly Munchies - Tea	A cookbook marketed toward men. Use it to learn a recipe.
+826	Manly Munchies - Chowder	A cookbook marketed toward men. Use it to learn a recipe.
+827	Manly Munchies - Tarts	A cookbook marketed toward men. Use it to learn a recipe.
+828	Manly Munchies - Porridge	A cookbook marketed toward men. Use it to learn a recipe.
+829	Manly Munchies - Pizza	A cookbook marketed toward men. Use it to learn a recipe.
+830	Manly Munchies - Coffee	A cookbook marketed toward men. Use it to learn a recipe.
+831	Manly Munchies - Gratin	A cookbook marketed toward men. Use it to learn a recipe.
+832	Manly Munchies - Deep Frying	A cookbook marketed toward men. Use it to learn a recipe.
+833	Manly Munchies - Puddings	A cookbook marketed toward men. Use it to learn a recipe.
+834	Manly Munchies - Pasta Soup	A cookbook marketed toward men. Use it to learn a recipe.
+835	Manly Munchies - Beef & Rice	A cookbook marketed toward men. Use it to learn a recipe.
+836	Manly Munchies - Steak	A cookbook marketed toward men. Use it to learn a recipe.
+837	Manly Munchies - Cocktails	A cookbook marketed toward men. Use it to learn a recipe.
+838	Manly Munchies - Gelato	A cookbook marketed toward men. Use it to learn a recipe.
+839	Manly Munchies - Hotpots	A cookbook marketed toward men. Use it to learn a recipe.
+840	Manly Munchies - Hamburgers	A cookbook marketed toward men. Use it to learn a recipe.
+841	Red Moon Rose - Chapter 1	Part 1 of a popular novel published in Erebonia.
+842	Red Moon Rose - Chapter 2	Part 2 of a popular novel published in Erebonia.
+843	Red Moon Rose - Chapter 3	Part 3 of a popular novel published in Erebonia.
+844	Red Moon Rose - Chapter 4	Part 4 of a popular novel published in Erebonia.
+845	Red Moon Rose - Chapter 5	Part 5 of a popular novel published in Erebonia.
+846	Red Moon Rose - Chapter 6	Part 6 of a popular novel published in Erebonia.
+847	Red Moon Rose - Chapter 7	Part 7 of a popular novel published in Erebonia.
+848	Red Moon Rose - Chapter 8	Part 8 of a popular novel published in Erebonia.
+849	Red Moon Rose - Chapter 9	Part 9 of a popular novel published in Erebonia.
+850	Red Moon Rose - Chapter 10	Part 10 of a popular novel published in Erebonia.
+851	Red Moon Rose - Chapter 11	Part 11 of a popular novel published in Erebonia.
+852	Red Moon Rose - Chapter 12	Part 12 of a popular novel published in Erebonia.
+853	Red Moon Rose - Chapter 13	Part 13 of a popular novel published in Erebonia.
+854	Red Moon Rose - Finale	The finale of a popular novel published in Erebonia.
+855	Relaxation Through Music	A book about relaxing music.
+856	Legram Guidebook	A book for tourists, introducing good tourist spots in Legram.
+857	Touching Paintings	A book full of touching and moving paintings.
+858	Traditional Archery	A guidebook on traditional Erebonian archery.
+859	The Art of Napping	A practical guide to improving the quality of your naps.
+860	Intermediate Chess	A chess handbook for intermediate level players.
+861	A Teaching Primer	A book that explains the best way to teach others.
+862	Imperial Horsemanship	A textbook on traditional Erebonian horsemanship.
+863	Swimming Strategies	A book detailing how to improve your swimming skills.
+864	Military Mania	A book full of information on different kinds of weaponry.
+865	Erebonian Art History	A book detailing the history of Erebonian art.
+866	Essence of Lacrosse	A book detailing how to improve your lacrosse skills.
+867	Big Book of Instruments	A book that introduces all kinds of different instruments.
+868	Advanced Court Fencing	A guidebook on traditional Imperial court fencing.
+869	Brewing Amazing Coffee	A book all about how to brew the perfect cup of coffee.
+870	Cats, Cats, Cats	A book filled from cover to cover with photographs of cats.
+871	Expert Cookware	A book full of useful kinds of cookware.
+872	The Philosophy of Blade	A book that applies Blade's philosophies to daily life.
+873	Ooze Cookie 	[Attack (Set) - Area (S) - Poison (50%)]\n(Rank D) An unusually-colored poisonous cookie.
+874	Frozen Soup 	[Magic Attack (Set) - Area (S) - Freeze (50%)]\n(Rank C) Soup so cold, it freezes your whole body.
+875	Roasted Fry-up 	[Attack (Set) - Area (S) - Burn (50%)]\n(Rank C) Fry-up that was fried so much, it bursts into flames.
+876	Hampering Rice 	[Attack (Set) - Area (S) - Delay+20]\n(Rank B) Hashed beef rice that's too sticky to actually eat.
+877	Dangerous Meatball 	[Attack (Set) - Area (M) - Faint (50%)]\n(Rank A) A highly volatile meatball that explodes on impact.
+878	Soft & Fluffy Omelet	[Restores 100 HP/Cures K.O.]\nThe perfect omelet. Soft and fluffy outside, runny inside.
+879	Royal Sable	[Restores 1000 HP/Cures Poison]\nAn elegant, fragrant sable that isn't too sweet.
+880	Golden Juice	[Restores 1200 HP/Cures K.O.]\nA miraculous mixed juice that radiates a gold color.
+881	Elegant Sandwich	[Restores 1800 HP/Restores 20 CP]\nA sandwich made from the freshest ingredients money can buy.
+882	Aromatic Tea	[Restores 2000 HP/Cures Seal/Mute]\nA luxurious cup of tea with a full-bodied fragrance.
+883	Jewel Potage	[Restores 2400 HP/Cures Freeze]\nA thick potage that shines like a high-class gemstone.
+884	Luxury Tart	[Restores 2800 HP/Cures Petrify]\nA luxurious tart topped with a variety of different fruits.
+885	Nord Porridge	[Restores 2600 HP/DEF/ADF+25% (5 Turns)]\nMilk porridge in a Nord style. Fills you with energy.
+886	Special Pizza	[Restores 2000 HP/Restores 25 CP/Cures Stat Down]\nA pizza made from a perfect harmony of ingredients and sauces.
+887	Premium Coffee	[Restores 3000 HP/Cures Sleep/Nightmare]\nThe perfect coffee. Made from meticulously selected beans.
+888	Melted Gratin	[Restores 2800 HP/Restores 40 CP]\nThe ultimate gratin, coated in a layer of melted cheese.
+889	Elegant Fried Fish	[Restores 4000 HP/SPD+25% (5 Turns)]\nAn elegant fried fish in a fragrant, delicious batter.
+890	Wobbly Pudding	[Restores 2600 HP/ATS/ADF+25% (5 Turns)]\nA thick yet delicate wobbly pudding.
+891	Celestial Pasta Soup	[Restores 3000 HP/Restores 150 EP/Cures Burn]\nHas a refreshing taste that makes you think of the blue sky.
+892	Noble Demi-Glace Rice	[Restores 5000 HP/Restores 15 CP/ATS/SPD+25% (3 Turns)]\nRice in a flavorful, mellow demi-glace sauce.
+893	Marbled Steak	[Restores 5600 HP/STR/DEF+25% (5 Turns)]\nAn exquisite steak that melts in the mouth.
+894	Miraculous Cocktail	[Restores 3200 HP/Restores 45 CP]\nA vividly-red non-alcoholic cocktail.
+895	Heavenly Gelato	[Restores 3200 HP/Restores 150 EP/Cures K.O.]\nGelato containing a variety of flavors in perfect harmony.
+896	Ultimate Hotpot	[Restores 12,000 HP/STR/ATS/SPD+50% (3 Turns)]\nThe ultimate hotpot. Piled high with ingredients.
+897	Imperial Hamburger	[Restores 10,000 HP/Restores 20 CP/STR/DEF+50% (5 Turns)]\nA lord among hamburgers that fills you with energy.
+898	Simple Omelet	[Restores 600 HP]\nA plain and easy to make omelet.
+899	Sweet Cookie	[Restores 700 HP/Cures Poison]\nA homemade cookie that's a little rough round the edges.
+900	Whole Juice	[Restores 1000 HP/Cures Faint]\nA high-class juice made from squeezed whole fruits.
+901	Tomato Sandwich	[Restores 1500 HP/Restores 10 CP]\nA sandwich containing freshly picked tomatoes.
+902	Savory Herb Tea	[Restores 1200 HP/Cures Seal]\nA flavorful herb tea containing a blend of different herbs.
+903	Creamy Chowder	[Restores 1400 HP/Cures Freeze]\nA thick, creamy seafood stew.
+904	Berry Tart	[Restores 1800 HP/Cures Petrify]\nA sweet and sour tart topped with plenty of fresh berries.
+905	Milk Porridge	[Restores 1800 HP/DEF/ADF+25% (3 Turns)]\nHealthy, warming porridge with a hint of sweetness.
+906	Crispy Pizza	[Restores 1200 HP/Restores 15 CP]\nCrispy mixed pizza topped with fragrant, mildly burned cheese.
+907	Roasted Coffee	[Restores 1600 HP/Cures Sleep/Nightmare]\nHighly fragrant coffee for the discerning adult.
+908	Tomato Gratin	[Restores 2400 HP/Restores 20 CP]\nA deliciously sweet tomato gratin.
+909	Fried Fish	[Restores 3000 HP/SPD+25% (3 Turns)]\nA crunchy and fresh fried fish. One is enough to satisfy you.
+910	Custard Pudding	[Restores 1800 HP/ATS/ADF+25% (3 Turns)]\nA simple, run-of-the-mill pudding with a distinctive taste.
+911	Refreshing Pasta Soup	[Restores 2600 HP/Restores 50 EP/Cures Burn]\nA pasta soup that fills your mouth with a refreshing aroma.
+912	Hashed Beef Rice	[Restores 3000 HP/Restores 10 CP/SPD+25% (3 Turns)]\nA meal served once a week in the Imperial Army. 
+913	Stamina Steak	[Restores 3600 HP/STR/DEF+25% (3 Turns)]\nA steak with added spices to stimulate your appetite.
+914	Tomato Cocktail	[Restores 2600 HP/Restores 30 CP]\nA healthy, non-alcoholic cocktail made with acerbic tomatoes.
+915	Mixed Gelato	[Restores 2000 HP/Restores 100 EP/Cures K.O.]\nGelato made with a perfect balance of different flavors.
+916	Filling Hotpot	[Restores 7000 HP/STR/ATS/SPD+25% (3 Turns)]\nA filling hotpot that's bursting with meat and vegetables.
+917	Handmade Hamburger	[Restores 6000 HP/Restores 10 CP/STR/DEF+25% (5 Turns)]\nA delicious hamburger with a hand-shaped patty.
+918	Solid Omelet 	[Restores 400 HP/DEF+25% (3 Turns)]\nResembles an omelet, although it's far too chewy to be one.
+919	Yellow Liquid 	[Restores 100 EP]\nA mysterious yellow liquid made up of liquefied orbal energy.
+920	Bitter Sandwich 	[Restores 100 HP/Restores 40 CP]\nA highly bitter sandwich. You either love it or hate it.
+921	Brown Liquid 	[Restores 200 EP]\nLiquid with an odd smell. Made up of liquefied orbal energy.
+922	Elementart 	[Restores 1200 HP/ATS+25% (5 Turns)]\nA simple yet stylish tart.
+923	Soggy Porridge 	[Restores 800 HP/DEF/ADF+50% (3 Turns)]\nPorridge that has a little too much moisture.
+924	Mirror Pizza 	[Restores 50 EP/Magic Reflect]\nA circular pizza with a strange shine to it.
+925	Black Liquid 	[Restores 250 EP]\nA black liquid made up of liquefied orbal energy.
+926	Magma Gratin 	[Restores 200 HP/Restores 50 CP]\nA gratin with a surface that boils like magma.
+927	Egg Custard Pudding 	[Restores 600 HP/Insight (5 Turns)]\nEastern-styled pudding. Seems ordinary until you take a bite.
+928	Colorless Noodles 	[Restores 2400 HP/STR/SPD+25% (3 Turns)]\nSimple noodles with none of the taste of their ingredients.
+929	Adamantine Steak 	[Restores 1000 HP/Physical Immunity]\nA lump of meat that's as hard as rock.
+930	Red Liquid 	[Restores 300 EP/Restores 45 CP]\nLiquefied orbal energy. Has a pungent smell.
+931	Wonder Gelato 	[Restores 500 HP/150EP/Cures abnormal status/Stat Down]\nA mysterious, very soft to the touch gelato.
+932	Enigmatic Hotpot 	[Restores 500 EP/Either restores 100 CP or causes Near-Death]\nA mysterious hotpot. It smells dangerous.
+933	Warm Egg Soup 	[Restores 600 HP/STR+25% (3 Turns)/Cures Freeze]\nA soup that warms you from head to toe from the first sip.
+934	White Cookie 	[Restores 800 HP/Cures Poison/Burn]\nA high-class cookie with luxurious white chocolate inside.
+935	Wild Mix 	[Restores 1000 HP/Restores 50 EP/Cures Faint/Confuse]\nA mixed juice made by randomly adding ingredients.
+936	Victory Sandwich 	[Restores 1500 HP/Restores 25 CP/STR+25% (3 Turns)]\nA sandwich made with plenty of meat. Fills you with energy.
+937	Nord Tea 	[Restores 1600 HP/SPD+25% (3 Turns)]\nA variety of herb tea long loved by the people of Nord.
+938	Deluxe Herb Chowder 	[Restores 2000 HP/Cures Poison/Blind/Burn/Freeze]\nFull of ingredients. The herbs' aroma whets the appetite.
+939	Soft Chocolate Tart 	[Restores 2400 HP/Cures Freeze/Petrify]\nUses only the finest chocolate. Looks as good as it tastes.
+940	Three Cheese Risotto 	[Restores 1200 HP/STR/ATS+25% (5 Turns)]\nA perfectly crafted risotto containing a variety of cheeses.
+941	Teriyaki Chicken Pizza 	[Restores 2400 HP/Restores 25 CP/DEF/SPD+25% (3 Turns)]\nAn Eastern-style chicken pizza with plenty of flavorful sauce.
+942	Double Espresso 	[Restores 2400 HP/Cures Sleep/Nightmare/Faint/Confuse]\nA special kind of espresso made with rare, dark-roasted beans.
+943	Whole Pumpkin Gratin 	[Restores 2000 HP/Restores 25 CP/ATS+50% (3 Turns)]\nA gratin full of pumpkin, served in a hollowed-out pumpkin.
+944	Fish Nuggets	[Restores 3600 HP/SPD+50% (3 Turns)]\nCharmingly bite-sized nuggets of fried fish.
+945	Quartet Pudding 	[Restores 1400 HP/STR/DEF/ATS/ADF+25% (4 Turns)]\nA carefully crafted pudding with four perfectly fused sauces.
+946	Deluxe Herb Pasta 	[Restores 1800 HP/Restores 100 EP/Cures abnormal status]\nHerb pasta known for its unique, addictive fragrance.
+947	Artistic Omurice 	[Restores 3600 HP/Restores 20 CP/DEF/ADF+50% (3 Turns)]\nA playful omelet with a picture drawn in sauce on top of it.
+948	Juicy Kebab 	[Restores 5200 HP/STR+50% (5 Turns)]\nA kebab bursting with juices, with delicious-smelling sauce.
+949	Red Hot Soda 	[Restores 2200 HP/Restores 60 CP]\nA stimulating drink that gets its taste from the spices used.
+950	Salty Gelato 	[Restores 2500 HP/Restores 50 EP/25 CP/Cures K.O.]\nA pretty blue salted gelato. As nice to look at as to eat.
+951	Hurricane Hotpot	[Restores 2500 HP/Restores 150 EP/45 CP/STR/SPD+50% (5 Turns)]\nA simple, flavorful hot pot made using delicious stock.
+952	Mixed Hamburger Dish 	[Restores 8000 HP/Restores 30 CP/ATS/ADF+50% (5 Turns)]\nA dish perfectly balanced for variety and nutrition.
+953	Fresh Egg	A freshly laid egg. The yellow yolk inside is highly\nnutritious.
+954	Fresh Milk	Freshly drawn milk. Soft and pleasant on the tongue with a\nhint of sweetness.
+955	Mature Cheese	Matured cheese with a deep flavor. Delicious both on its own\nand when used for cooking.
+956	Fresh Herb	A herb with a refreshing fragrance. Used for a variety of\npurposes, from removing odors from meats to making herb tea.
+957	Crisp Onion	A large onion with a crisp texture. Not all that pungent, so\nit can be eaten as it is.
+958	Flaky Potato	A fresh potato that's a little on the small side. Tends to\nmaintain its shape, making it ideal for boiling.
+959	Starberry	A small fruit with a star-like shape when cut open. Known for \nits sweet and sour taste.
+960	Acerbic Tomato	A new kind of tomato native to the Liberl Kingdom. \nIncredibly bitter, and yet strangely addictive.
+961	Honey Syrup	Fragrant honey syrup. Known for being sweet without being too\nrich.
+962	Coarse Rock Salt	Coarsely ground rock salt. Exceptionally salty on the tongue.
+963	Assorted Grains	An assortment of popular grains, including rice, wheat and\nbeans. Essential for cooking.
+964	Healthy Liquor	A liquor with a mild taste. Highly nutritious, it is\nparticularly prized in cooking.
+965	Red Beast Flesh	Red meat from a monster. Fills you with energy with every\nbite.
+966	White Beast Flesh	White meat from a monster. Has a tender texture and\nrefreshing taste.
+967	Chitinous Shell	A highly nutritious monster's shell. Produces a mellow\ntasting stock when boiled.
+968	Clear Gelatin	A wobbly, viscous liquid. Its appearance may leave much to be\ndesired, but it melts in the mouth.
+969	Globby Fat	Thick fat from a monster. Delicious, though it takes some\ngetting used to the taste.
+970	Hearty Powder	Delicate powder that stimulates the tastebuds. Used as a \nspice and as a thickener in cooking.
