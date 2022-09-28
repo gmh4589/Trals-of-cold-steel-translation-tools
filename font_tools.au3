@@ -52,6 +52,7 @@ For $j = 1 to $Chars - 1
 				$Ch[$j][$i] = _BinaryToInt32(FileRead($File, 2))
 			Next
 		$Ch[$j][0] = ChrW($Ch[$j][0])
+		;Убирает длинные пропуски между букв в кириллице
 		If _ArraySearch($abcA, $Ch[$j][0]) > -1 Then $Ch[$j][7] = 0
 	EndIf
 Next
@@ -72,10 +73,12 @@ Next
 _Excel_BookSaveAs($oWorkbook, @ScriptDir & "\" & $iName & ".xlsx", Default, True)
 _Excel_BookClose($oWorkbook)
 
+;Выводит на экран прочитанный шрифт
 _ArrayDisplay($Ch, 'Шрифт: ' & $iName & '.itf')
 
-$origChar = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrsTtUuvWwXxYyZz@$'&"
-$replaceChar = "АаВвСсДдЕеФфГгНнИьыйКкЛлМмПпОоРрЮюЯяжТтбцчщшХхУуэзБЧЭи"
+;Символы для замены
+$origChar = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrsTtUuvWwXxYyZz@$'&" ;Список символов, какие менять
+$replaceChar = "АаВвСсДдЕеФфГгНнИьыйКкЛлМмПпОоРрЮюЯяжТтбцчщшХхУуэзБЧЭи" ;Список символов, на какие менять
 
 $origCA = StringSplit($origChar, '')
 $repCA = StringSplit($replaceChar, '')
