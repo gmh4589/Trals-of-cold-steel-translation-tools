@@ -1,35 +1,85 @@
-import os
-from pprint import pprint
+from os import path
 from tkinter import filedialog as fd
+from PIL import Image
 
 
-def dds_save(x, y, palette, name, data):
+def name_check(name):
+    a = 0
+    new_name = name
 
-    with open(f'{name}.dds', 'wb') as dds_file:
-        dds_file.write(b'\x44\x44\x53\x20\x7C\x00\x00\x00\x07\x10\x0A\x00')
+    while True:
+        a += 1
+
+        if path.exists(f'{new_name}.dds'):
+            new_name += f'{name}_{a}'
+        else:
+            break
+
+    return new_name
+
+
+def dds_save(x, y, codec, name, data):
+
+    with open(f'{name_check(name)}.dds', 'wb') as dds_file:
+        dds_file.write(b'DDS\x20\x7C\x00\x00\x00\x07\x10\x0A\x00')
         dds_file.write(x.to_bytes(4, byteorder='little'))
         dds_file.write(y.to_bytes(4, byteorder='little'))
         dds_file.write(b'\x70\x55\x05\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
                        b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
                        b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x20\x00\x00\x00\x04\x00\x00\x00')
-        dds_file.write(palette)
+        dds_file.write(codec)
         dds_file.write(b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
                        b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
         dds_file.write(data)
 
 
-def png_save(x, y, palette, name, data):
-    print('TODO: добавить поддержку PNG')
+def bmp_save(x, y, codec, name, data):
+
+    name = name_check(name)
+    codec = codec.decode('utf-8')[:-1]
+
+    Image.frombytes(codec, (y, x), data).save(f'{name}.bmp')
+
+
+def phyre_save(name):
+
+    ext = name.split('.')[-1]
+    x, y = Image.open(name).size
+
+    with open(name, 'rb') as image_file:
+        image_file.seek(128 if ext == 'dds' else 150)
+        image_data = image_file.read()
+
+    with open(name.replace(ext, 'bin'), 'rb') as head_file:
+        head_data = head_file.read()
+
+    new_file = name + '_new.phyre' if 'bmp' not in name else name.replace('bmp', 'png') + '_new.phyre'
+
+    with open(new_file, 'wb') as new_phyre:
+        new_phyre.write(head_data)
+        new_phyre.write(x.to_bytes(4, byteorder='little'))
+        new_phyre.write(y.to_bytes(4, byteorder='little'))
+        new_phyre.write(b'\x01\x00\x00\x00\x00\x50\x54\x65\x78\x74\x75\x72\x65\x32\x44\x00')
+        new_phyre.write(b'DXT5' if ext == 'dds' else b'RGBA8')
+        new_phyre.write(b'\x00\x08\x00\x00\x00\x0B\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00')
+        new_phyre.write(b'\x05' if ext == 'dds' else b'\x06')
+        new_phyre.write(b'\x00\x00\x00\x0B\x00\x00\x00\x58\x02\x00\x01\x48\x04\x01\x48\x4E\x02\x08\x01\x00')
+        new_phyre.write(image_data)
 
 
 def open_file(phyre_file=''):
+
     if phyre_file == '':
-        filetypes = (('Phyre files', '*.phyre'), ('All files', '*.*'))
+        filetypes = (('Phyre files', '*.phyre; *.png; *.dds; *.bmp'), ('All files', '*.*'))
         phyre_file = fd.askopenfilename(title='Выберите Phyre файл',
                                         filetypes=filetypes)
 
     if phyre_file == '':
         input('Файл не выбран!')
+        return
+
+    if phyre_file.split('.')[-1] != 'phyre':
+        phyre_save(phyre_file)
         return
 
     full_name = phyre_file.split('.')
@@ -107,7 +157,7 @@ def open_file(phyre_file=''):
                                            'type': tp,
                                            'magic': magic}
 
-        pprint(paramsList)
+        # pprint(paramsList)
         phyre.seek(0)
         data = phyre.read().split(b'\x00PTexture2D\x00')
         image = data[-1]
@@ -115,26 +165,25 @@ def open_file(phyre_file=''):
     size = data[-2].split(ft)[-1]
     p = image[:5]
     image_data = image[head_size:]
-    start = 0 if len(size) % 2 == 0 else 1
-    x_pos = int.from_bytes(paramsList['m_width']['magic'][0], byteorder='little') + start
-    y_pos = int.from_bytes(paramsList['m_height']['magic'][0], byteorder='little') + start
-    x = int.from_bytes(size[x_pos:x_pos + 4], byteorder='little')
-    y = int.from_bytes(size[y_pos:y_pos + 4], byteorder='little')
+    y = int.from_bytes(size[-12:-8], byteorder='little')
+    x = int.from_bytes(size[-8:-4], byteorder='little')
 
+    # Сохраняет заголовок файла, без размеров текстуры и кодека
     with open(f'{name}.bin', 'wb') as head_file:
 
+        head_data = b''
+
         for d in range(len(data) - 1):
-            head_file.write(data[d])
-            head_file.write(b'\x00PTexture2D\x00')
+            head_data += data[d] + b'\x00PTexture2D\x00'
+
+        head_data = head_data[:-24]
+        head_file.write(head_data)
 
     if file_type == 'dds':
         dds_save(x, y, p, name, image_data)
 
-        # if x != y:
-        #     dds_save(y, x, p, f'{name}_reverse', image_data)
-
     elif file_type == 'png':
-        png_save(x, y, p, name, image_data)
+        bmp_save(x, y, p, name, image_data)
 
 
 if __name__ == "__main__":
