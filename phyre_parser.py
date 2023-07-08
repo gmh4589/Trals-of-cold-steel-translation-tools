@@ -37,7 +37,6 @@ def bmp_save(x, y, codec, name, data):
 
     name = name_check(name)
     codec = codec.decode('utf-8')[:-1]
-
     Image.frombytes(codec, (y, x), data).save(f'{name}.bmp')
 
 
@@ -47,7 +46,7 @@ def phyre_save(name):
     x, y = Image.open(name).size
 
     with open(name, 'rb') as image_file:
-        image_file.seek(128 if ext == 'dds' else 150)
+        image_file.seek(128 if ext == 'dds' else 54)
         image_data = image_file.read()
 
     with open(name.replace(ext, 'bin'), 'rb') as head_file:
@@ -64,6 +63,7 @@ def phyre_save(name):
         new_phyre.write(b'\x00\x08\x00\x00\x00\x0B\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00')
         new_phyre.write(b'\x05' if ext == 'dds' else b'\x06')
         new_phyre.write(b'\x00\x00\x00\x0B\x00\x00\x00\x58\x02\x00\x01\x48\x04\x01\x48\x4E\x02\x08\x01\x00')
+        # new_phyre.write(image_data if ext == 'dds' else image_data[::-1])
         new_phyre.write(image_data)
 
 
