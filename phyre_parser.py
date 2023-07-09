@@ -1,3 +1,4 @@
+import os.path
 from os import path
 from tkinter import filedialog as fd
 from PIL import Image
@@ -49,6 +50,10 @@ def phyre_save(name):
         image_file.seek(128 if ext == 'dds' else 54)
         image_data = image_file.read()
 
+    if not os.path.exists(name.replace(ext, 'bin')):
+        input(f"Файл {name.replace(ext, 'bin')} не найден!\n")
+        return
+
     with open(name.replace(ext, 'bin'), 'rb') as head_file:
         head_data = head_file.read()
 
@@ -63,7 +68,6 @@ def phyre_save(name):
         new_phyre.write(b'\x00\x08\x00\x00\x00\x0B\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00')
         new_phyre.write(b'\x05' if ext == 'dds' else b'\x06')
         new_phyre.write(b'\x00\x00\x00\x0B\x00\x00\x00\x58\x02\x00\x01\x48\x04\x01\x48\x4E\x02\x08\x01\x00')
-        # new_phyre.write(image_data if ext == 'dds' else image_data[::-1])
         new_phyre.write(image_data)
 
 
@@ -71,8 +75,7 @@ def open_file(phyre_file=''):
 
     if phyre_file == '':
         filetypes = (('Phyre files', '*.phyre; *.png; *.dds; *.bmp'), ('All files', '*.*'))
-        phyre_file = fd.askopenfilename(title='Выберите Phyre файл',
-                                        filetypes=filetypes)
+        phyre_file = fd.askopenfilename(title='Выберите Phyre файл', filetypes=filetypes)
 
     if phyre_file == '':
         input('Файл не выбран!')
@@ -93,7 +96,7 @@ def open_file(phyre_file=''):
         ft = b'png\x00'
         head_size = 43
     else:
-        input('Неподдреживемый тип файла!')
+        input('Неподдерживаемый тип файла!')
         return
 
     with open(phyre_file, 'rb') as phyre:
