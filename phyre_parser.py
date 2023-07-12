@@ -1,7 +1,10 @@
-import os.path
+import os
 from os import path
 from tkinter import filedialog as fd
 from PIL import Image
+import zlib
+
+dir_path = ''
 
 
 def name_check(name):
@@ -20,8 +23,7 @@ def name_check(name):
 
 
 def dds_save(x, y, codec, name, data):
-
-    with open(f'{name_check(name)}.dds', 'wb') as dds_file:
+    with open(f'{dir_path}\\{name_check(name)}.dds', 'wb') as dds_file:
         dds_file.write(b'DDS\x20\x7C\x00\x00\x00\x07\x10\x0A\x00')
         dds_file.write(x.to_bytes(4, byteorder='little'))
         dds_file.write(y.to_bytes(4, byteorder='little'))
@@ -35,24 +37,32 @@ def dds_save(x, y, codec, name, data):
 
 
 def bmp_save(x, y, codec, name, data):
-
     name = name_check(name)
     codec = codec.decode('utf-8')[:-1]
-    Image.frombytes(codec, (y, x), data).save(f'{name}.bmp')
+    Image.frombytes(codec, (y, x), data).save(f'{dir_path}\\{name}.bmp')
+
+
+def gxt_save(name, data):
+    name = f'{dir_path}\\{name_check(name)}.gxt'
+    # compress = data[64:]
+    # decompress = zlib.decompress(compress)
+    #
+    # with open(name.replace('gxt', 'raw'), 'wb') as raw_file:
+    #     raw_file.write(decompress)
+
+    with open(name, 'wb') as gxt_file:
+        gxt_file.write(data)
+
+    os.system(f'GXTConvert.exe {name}')
 
 
 def phyre_save(name):
-
     ext = name.split('.')[-1]
     x, y = Image.open(name).size
 
     with open(name, 'rb') as image_file:
-        image_file.seek(128 if ext == 'dds' else 54)
+        image_file.seek(128 if ext == 'dds' else 150)
         image_data = image_file.read()
-
-    if not os.path.exists(name.replace(ext, 'bin')):
-        input(f"Файл {name.replace(ext, 'bin')} не найден!\n")
-        return
 
     with open(name.replace(ext, 'bin'), 'rb') as head_file:
         head_data = head_file.read()
@@ -72,10 +82,12 @@ def phyre_save(name):
 
 
 def open_file(phyre_file=''):
+    global dir_path
 
     if phyre_file == '':
-        filetypes = (('Phyre files', '*.phyre; *.png; *.dds; *.bmp'), ('All files', '*.*'))
-        phyre_file = fd.askopenfilename(title='Выберите Phyre файл', filetypes=filetypes)
+        filetypes = (('Phyre files', '*.phyre *.png *.dds *.bmp'), ('All files', '*.*'))
+        phyre_file = fd.askopenfilename(title='Выберите Phyre файл',
+                                        filetypes=filetypes)
 
     if phyre_file == '':
         input('Файл не выбран!')
@@ -85,18 +97,23 @@ def open_file(phyre_file=''):
         phyre_save(phyre_file)
         return
 
-    full_name = phyre_file.split('.')
-    file_type = full_name[1].split('_')[0]
-    name = full_name[0]
+    dir_path = os.path.dirname(phyre_file)
+    name = os.path.basename(phyre_file).split('.')[0]
 
-    if file_type == 'dds':
+    if 'vita' in phyre_file:
         ft = b'dds\x00'
+        file_type = 'gxt'
         head_size = 42
-    elif file_type == 'png':
+    elif 'dds' in phyre_file:
+        ft = b'dds\x00'
+        file_type = 'dds'
+        head_size = 42
+    elif 'png' in phyre_file:
         ft = b'png\x00'
+        file_type = 'png'
         head_size = 43
     else:
-        input('Неподдерживаемый тип файла!')
+        input('Неподдреживемый тип файла!')
         return
 
     with open(phyre_file, 'rb') as phyre:
@@ -104,11 +121,12 @@ def open_file(phyre_file=''):
         phyre.seek(4)
         size = int.from_bytes(phyre.read(4), byteorder='little')
         metaSize = int.from_bytes(phyre.read(4), byteorder='little')
-        platform = phyre.read(4).decode('utf-8')
+        platform = phyre.read(4)
+        supported = [b'1XNG', b'\x01MXG']
 
-        if platform != '1XNG':
+        if platform not in supported:
             input('Неподдерживаемая платформа\n'
-                  'Выберите файл для Switch версии игры!')
+                  'Выберите файл для Switch или Vita версии игры!')
             return
 
         phyre.seek(72, 1)
@@ -172,7 +190,7 @@ def open_file(phyre_file=''):
     x = int.from_bytes(size[-8:-4], byteorder='little')
 
     # Сохраняет заголовок файла, без размеров текстуры и кодека
-    with open(f'{name}.bin', 'wb') as head_file:
+    with open(f'{dir_path}\\{name}.bin', 'wb') as head_file:
 
         head_data = b''
 
@@ -182,11 +200,13 @@ def open_file(phyre_file=''):
         head_data = head_data[:-24]
         head_file.write(head_data)
 
-    if file_type == 'dds':
-        dds_save(x, y, p, name, image_data)
-
-    elif file_type == 'png':
-        bmp_save(x, y, p, name, image_data)
+    match file_type:
+        case 'dds':
+            dds_save(x, y, p, name, image_data)
+        case 'png':
+            bmp_save(x, y, p, name, image_data)
+        case 'gxt':
+            gxt_save(name, image_data)
 
 
 if __name__ == "__main__":
