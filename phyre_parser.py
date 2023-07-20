@@ -1,4 +1,5 @@
 import os
+import sys
 from tkinter import filedialog as fd
 from PIL import Image
 
@@ -29,8 +30,9 @@ def dds_save(x, y, codec, name, data):
         dds_file.write(b'\x70\x55\x05\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
                        b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
                        b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x20\x00\x00\x00\x04\x00\x00\x00')
-        dds_file.write(codec)
-        dds_file.write(b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
+        dds_file.write(codec if codec not in (b'ARGB8', b'RGBA8') else b'\x00\x00\x00\x00')
+        dds_file.write(b'\x00\x00\x00\x00' if codec not in (b'ARGB8', b'RGBA8') else b'\x20\x00\x00\x00')
+        dds_file.write(b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
                        b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
         dds_file.write(data)
 
@@ -62,15 +64,12 @@ def phyre_save(name):
     with open(name, 'rb') as image_file:
 
         match ext:
-            case 'dds':
-                start = 128
-            case 'bmp':
-                start = 150
+            case 'dds': start = 128
+            case 'bmp': start = 150
             case 'png':
                 im = Image.open(name).tobytes()
                 start = 0
-            case 'gxt':
-                start = 0
+            case 'gxt': start = 0
 
         image_file.seek(start)
         image_data = im if ext == 'png' else image_file.read()
@@ -135,11 +134,11 @@ def open_file(phyre_file=''):
         size = int.from_bytes(phyre.read(4), byteorder='little')
         metaSize = int.from_bytes(phyre.read(4), byteorder='little')
         platform = phyre.read(4)
-        supported = [b'1XNG', b'\x01MXG']
+        supported = [b'1XNG', b'\x01MXG', b'11XD']
 
         if platform not in supported:
             input('Неподдерживаемая платформа\n'
-                  'Выберите файл для Switch или Vita версии игры!')
+                  'Выберите файл для Switch, PC или Vita версии игры!')
             return
 
         phyre.seek(72, 1)
@@ -199,8 +198,13 @@ def open_file(phyre_file=''):
     size = data[-2].split(ft)[-1]
     p = image[:5]
     image_data = image[head_size:]
-    y = int.from_bytes(size[-12:-8], byteorder='little')
-    x = int.from_bytes(size[-8:-4], byteorder='little')
+
+    if platform == b'11XD':
+        y = int.from_bytes(size[31:35], byteorder='little')
+        x = int.from_bytes(size[35:39], byteorder='little')
+    else:
+        y = int.from_bytes(size[-12:-8], byteorder='little')
+        x = int.from_bytes(size[-8:-4], byteorder='little')
 
     # Сохраняет заголовок файла, без размеров текстуры и кодека
     with open(f'{dir_path}\\{name}.bin', 'wb') as head_file:
@@ -214,12 +218,9 @@ def open_file(phyre_file=''):
         head_file.write(head_data)
 
     match file_type:
-        case 'dds':
-            dds_save(x, y, p, name, image_data)
-        case 'png':
-            bmp_save(x, y, p, name, image_data)
-        case 'gxt':
-            gxt_save(name, image_data)
+        case 'dds': dds_save(x, y, p, name, image_data)
+        case 'png': bmp_save(x, y, p, name, image_data)
+        case 'gxt': gxt_save(name, image_data)
 
 
 if __name__ == "__main__":
