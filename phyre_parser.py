@@ -1,5 +1,4 @@
 import os
-import sys
 from tkinter import filedialog as fd
 from PIL import Image
 
@@ -23,7 +22,7 @@ def name_check(name):
 
 def dds_save(x, y, codec, name, data):
 
-    with open(f'{dir_path}\\{name_check(name)}.dds', 'wb') as dds_file:
+    with open(f'{dir_path}/{name_check(name)}.dds', 'wb') as dds_file:
         dds_file.write(b'DDS\x20\x7C\x00\x00\x00\x07\x10\x0A\x00')
         dds_file.write(x.to_bytes(4, byteorder='little'))
         dds_file.write(y.to_bytes(4, byteorder='little'))
@@ -56,41 +55,65 @@ def gxt_save(name, data):
 def phyre_save(name):
     ext = name.split('.')[-1]
 
-    if ext != 'gxt':
-        x, y = Image.open(name).size
-    else:
-        x, y = 0, 0
-
     with open(name, 'rb') as image_file:
 
+        image_file.seek(84)
+        dds_codec = image_file.read(4)
+
         match ext:
-            case 'dds': start = 128
-            case 'bmp': start = 150
+            case 'dds':
+                start = 128
+                codec = b'ARGB8' if dds_codec == b'\x00' * 4 else dds_codec
+                image_file.seek(12)
+                x = int.from_bytes(image_file.read(4), byteorder='little')
+                y = int.from_bytes(image_file.read(4), byteorder='little')
+            case 'bmp':
+                start = 150
+                codec = b'ARGB8'
+                x, y = Image.open(name).size
             case 'png':
-                im = Image.open(name).tobytes()
                 start = 0
-            case 'gxt': start = 0
+                codec = b'ARGB8'
+                x, y = Image.open(name).size
+            case 'gxt':
+                start = 0
+                codec = b'DXT5'
+                x, y = 0, 0
 
         image_file.seek(start)
-        image_data = im if ext == 'png' else image_file.read()
+        image_data = Image.open(name).tobytes() if ext == 'png' else image_file.read()
 
     with open(name.replace(ext, 'bin'), 'rb') as head_file:
+        head_file.seek(12)
+        platform = head_file.read(4)
+
+        match platform:
+            case b'11XD':
+                pref = b'\x00' * 75
+                postfix = b'\x48\x02\x08\x31\x00'
+            case b'\x01MXG':
+                pref = b'\x00' * 4
+                postfix = b'\x4C\x02\x08\x31\x00'
+            case _:
+                pref = b'\x01\x00\x00\x00'
+                postfix = b'\x4E\x02\x08\x01\x00'
+
+        head_file.seek(0)
         head_data = head_file.read()
+
+        if platform == b'11XD':
+            head_data = head_data[:-71]
+
 
     new_file = name.replace('bmp', 'png').replace('gxt', 'dds') + '_new.phyre'
 
+
     with open(new_file, 'wb') as new_phyre:
-        new_phyre.write(head_data)
-        new_phyre.write(x.to_bytes(4, byteorder='little'))
-        new_phyre.write(y.to_bytes(4, byteorder='little'))
-        new_phyre.write(b'\x00\x00\x00\x00' if ext == 'gxt' else b'\x01\x00\x00\x00')
-        new_phyre.write(b'\x00PTexture2D\x00')
-        new_phyre.write(b'DXT5' if (ext == 'dds' or ext == 'gxt') else b'RGBA8')
-        new_phyre.write(b'\x00\x08\x00\x00\x00\x0B\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00')
-        new_phyre.write(b'\x05' if (ext == 'dds' or ext == 'gxt') else b'\x06')
-        new_phyre.write(b'\x00\x00\x00\x0B\x00\x00\x00\x58\x02\x00\x01\x48\x04\x01\x48')
-        new_phyre.write(b'\x4C\x02\x08\x31\x00' if ext == 'gxt' else b'\x4E\x02\x08\x01\x00')
-        new_phyre.write(image_data)
+        new_phyre.write(head_data + x.to_bytes(4, byteorder='little') + y.to_bytes(4, byteorder='little') +
+                        pref + b'\x00PTexture2D\x00' + codec +
+                        b'\x00\x08\x00\x00\x00\x0B\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00' +
+                        (b'\x06' if codec == b'ARGB8' else b'\x05') +
+                        b'\x00\x00\x00\x0B\x00\x00\x00\x58\x02\x00\x01\x48\x04\x01\x48' + postfix + image_data)
 
 
 def open_file(phyre_file=''):
@@ -200,11 +223,13 @@ def open_file(phyre_file=''):
     image_data = image[head_size:]
 
     if platform == b'11XD':
-        y = int.from_bytes(size[31:35], byteorder='little')
-        x = int.from_bytes(size[35:39], byteorder='little')
+        x = int.from_bytes(size[-79:-75], byteorder='little')
+        y = int.from_bytes(size[-83:-79], byteorder='little')
     else:
-        y = int.from_bytes(size[-12:-8], byteorder='little')
         x = int.from_bytes(size[-8:-4], byteorder='little')
+        y = int.from_bytes(size[-12:-8], byteorder='little')
+
+    print(x, y)
 
     # Сохраняет заголовок файла, без размеров текстуры и кодека
     with open(f'{dir_path}\\{name}.bin', 'wb') as head_file:
