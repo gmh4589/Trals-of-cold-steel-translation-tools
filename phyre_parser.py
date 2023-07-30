@@ -1,4 +1,5 @@
 import os
+from pprint import pprint
 from tkinter import filedialog as fd
 from PIL import Image
 
@@ -22,25 +23,48 @@ def name_check(name):
 
 def dds_save(x, y, codec, name, data):
 
-    with open(f'{dir_path}/{name_check(name)}.dds', 'wb') as dds_file:
-        dds_file.write(b'DDS\x20\x7C\x00\x00\x00\x07\x10\x0A\x00')
-        dds_file.write(x.to_bytes(4, byteorder='little'))
-        dds_file.write(y.to_bytes(4, byteorder='little'))
-        dds_file.write(b'\x70\x55\x05\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
-                       b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
-                       b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x20\x00\x00\x00\x04\x00\x00\x00')
-        dds_file.write(codec if codec not in (b'ARGB8', b'RGBA8') else b'\x00\x00\x00\x00')
-        dds_file.write(b'\x00\x00\x00\x00' if codec not in (b'ARGB8', b'RGBA8') else b'\x20\x00\x00\x00')
-        dds_file.write(b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'
-                       b'\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
-        dds_file.write(data)
+    if codec == b'RGBA8':
+        png_save(x, y, codec, name, BGR2RGB(data, 'ARGB'))
+    elif codec == b'ARGB8':
+        png_save(x, y, b'RGBA8', name, BGR2RGB(data, 'ABGR'))
+
+    else:
+        with open(f'{dir_path}/{name_check(name)}.dds', 'wb') as dds_file:
+            dds_file.write(b'DDS\x20\x7C\x00\x00\x00\x07\x10\x0A\x00' +
+                           x.to_bytes(4, byteorder='little') + y.to_bytes(4, byteorder='little') +
+                           b'\x70\x55\x05\x00\x01\x00\x00\x00\x01' + b'\x00' * 47 +
+                           b'\x20\x00\x00\x00\x04\x00\x00\x00' +
+                           (codec if codec not in (b'ARGB8', b'RGBA8') else b'\x00' * 4) +
+                           (b'\x00' * 4 if codec not in (b'ARGB8', b'RGBA8') else b'\x20\x00\x00\x00') +
+                           (b'\x00' * 16 if codec != b'RGBA8' else b'\xFF\x00\x00\x00\x00\xFF\x00\x00\x00\x00\xFF\x00\x00\x00\x00\xFF') +
+                           b'\x00' * 19 + data)
 
 
-def bmp_save(x, y, codec, name, data):
+def png_save(x, y, codec, name, data):
     name = name_check(name)
     codec = codec.decode('utf-8')[:-1]
-    Image.frombytes(codec, (y, x), data).save(f'{dir_path}\\{name}.bmp')
+    print(codec)
     Image.frombytes(codec, (y, x), data).save(f'{dir_path}\\{name}.png')
+
+
+def byte_join(r, g, b, a, color_order):
+    new_data = [item for sublist in (zip(r, g, b, a) if 'A' in color_order else zip(r, g, b)) for item in sublist]
+    return bytes(new_data)
+
+
+# For 24 and 32 bits
+def BGR2RGB(data, color_order):
+    byte_array = list(data)
+
+    a = [byte_array[g] for g in
+         range(color_order.index('A'), len(byte_array), len(color_order))] if 'A' in color_order else []
+    x = [byte_array[h] for h in
+         range(color_order.index('X'), len(byte_array), len(color_order))] if 'X' in color_order else []
+    r = [byte_array[d] for d in range(color_order.index('R'), len(byte_array), len(color_order))]
+    g = [byte_array[e] for e in range(color_order.index('G'), len(byte_array), len(color_order))]
+    b = [byte_array[f] for f in range(color_order.index('B'), len(byte_array), len(color_order))]
+
+    return byte_join(r, g, b, a if 'X' not in color_order else x, color_order)
 
 
 def gxt_save(name, data):
@@ -86,33 +110,33 @@ def phyre_save(name):
     with open(name.replace(ext, 'bin'), 'rb') as head_file:
         head_file.seek(12)
         platform = head_file.read(4)
+        head_file.seek(0)
+        head_data = head_file.read()
 
         match platform:
             case b'11XD':
                 pref = b'\x00' * 75
                 postfix = b'\x48\x02\x08\x31\x00'
+                codec = head_data[-5:]
+                ext = head_data[-200:]
+                ext = 'dds' if b'dds' in ext else 'png'
+                head_data = head_data[:-76]
             case b'\x01MXG':
                 pref = b'\x00' * 4
                 postfix = b'\x4C\x02\x08\x31\x00'
+                ext = 'dds'
             case _:
                 pref = b'\x01\x00\x00\x00'
                 postfix = b'\x4E\x02\x08\x01\x00'
+                ext = 'dds' if 'dds' in name else 'png'
 
-        head_file.seek(0)
-        head_data = head_file.read()
-
-        if platform == b'11XD':
-            head_data = head_data[:-71]
-
-
-    new_file = name.replace('bmp', 'png').replace('gxt', 'dds') + '_new.phyre'
-
+    new_file = f"{name.split('.')[0]}.{ext}_new.phyre"
 
     with open(new_file, 'wb') as new_phyre:
         new_phyre.write(head_data + x.to_bytes(4, byteorder='little') + y.to_bytes(4, byteorder='little') +
                         pref + b'\x00PTexture2D\x00' + codec +
                         b'\x00\x08\x00\x00\x00\x0B\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00' +
-                        (b'\x06' if codec == b'ARGB8' else b'\x05') +
+                        (b'\x06' if codec in (b'ARGB8', b'RGBA8') else b'\x05') +
                         b'\x00\x00\x00\x0B\x00\x00\x00\x58\x02\x00\x01\x48\x04\x01\x48' + postfix + image_data)
 
 
@@ -213,7 +237,6 @@ def open_file(phyre_file=''):
                                            'type': tp,
                                            'magic': magic}
 
-        # pprint(paramsList)
         phyre.seek(0)
         data = phyre.read().split(b'\x00PTexture2D\x00')
         image = data[-1]
@@ -240,12 +263,15 @@ def open_file(phyre_file=''):
             head_data += data[d] + b'\x00PTexture2D\x00'
 
         head_data = head_data[:-24]
-        head_file.write(head_data)
+        head_file.write(head_data if platform != b'11XD' else head_data + p)
 
     match file_type:
-        case 'dds': dds_save(x, y, p, name, image_data)
-        case 'png': bmp_save(x, y, p, name, image_data)
-        case 'gxt': gxt_save(name, image_data)
+        case 'dds':
+            dds_save(x, y, p, name, image_data)
+        case 'png':
+            png_save(x, y, p, name, image_data)
+        case 'gxt':
+            gxt_save(name, image_data)
 
 
 if __name__ == "__main__":
