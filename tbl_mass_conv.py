@@ -7,7 +7,7 @@ from tkinter import filedialog as fd
 
 class TBL:
 
-    def __int__(self):
+    def __init__(self):
         self.dirPath = ''
         self.name = ''
         self.data = False
