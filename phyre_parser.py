@@ -84,25 +84,24 @@ def phyre_save(name):
         image_file.seek(84)
         dds_codec = image_file.read(4)
 
-        match ext:
-            case 'dds':
-                start = 128
-                codec = b'ARGB8' if dds_codec == b'\x00' * 4 else dds_codec
-                image_file.seek(12)
-                x = int.from_bytes(image_file.read(4), byteorder='little')
-                y = int.from_bytes(image_file.read(4), byteorder='little')
-            case 'bmp':
-                start = 150
-                codec = b'ARGB8'
-                x, y = Image.open(name).size
-            case 'png':
-                start = 0
-                codec = b'ARGB8'
-                x, y = Image.open(name).size
-            case 'gxt':
-                start = 0
-                codec = b'DXT5'
-                x, y = 0, 0
+        if ext == 'dds':
+            start = 128
+            codec = b'ARGB8' if dds_codec == b'\x00' * 4 else dds_codec
+            image_file.seek(12)
+            x = int.from_bytes(image_file.read(4), byteorder='little')
+            y = int.from_bytes(image_file.read(4), byteorder='little')
+        elif ext == 'bmp':
+            start = 150
+            codec = b'ARGB8'
+            x, y = Image.open(name).size
+        elif ext == 'png':
+            start = 0
+            codec = b'ARGB8'
+            x, y = Image.open(name).size
+        elif ext == 'gxt':
+            start = 0
+            codec = b'DXT5'
+            x, y = 0, 0
 
         image_file.seek(start)
         image_data = Image.open(name).tobytes() if ext == 'png' else image_file.read()
@@ -113,22 +112,21 @@ def phyre_save(name):
         head_file.seek(0)
         head_data = head_file.read()
 
-        match platform:
-            case b'11XD':
-                pref = b'\x00' * 75
-                postfix = b'\x48\x02\x08\x31\x00'
-                codec = head_data[-5:]
-                ext = head_data[-200:]
-                ext = 'dds' if b'dds' in ext else 'png'
-                head_data = head_data[:-76]
-            case b'\x01MXG':
-                pref = b'\x00' * 4
-                postfix = b'\x4C\x02\x08\x31\x00'
-                ext = 'dds'
-            case _:
-                pref = b'\x01\x00\x00\x00'
-                postfix = b'\x4E\x02\x08\x01\x00'
-                ext = 'dds' if 'dds' in name else 'png'
+        if platform == b'11XD':
+            pref = b'\x00' * 75
+            postfix = b'\x48\x02\x08\x31\x00'
+            codec = head_data[-5:]
+            ext = head_data[-200:]
+            ext = 'dds' if b'dds' in ext else 'png'
+            head_data = head_data[:-76]
+        elif platform == b'\x01MXG':
+            pref = b'\x00' * 4
+            postfix = b'\x4C\x02\x08\x31\x00'
+            ext = 'dds'
+        else:
+            pref = b'\x01\x00\x00\x00'
+            postfix = b'\x4E\x02\x08\x01\x00'
+            ext = 'dds' if 'dds' in name else 'png'
 
     new_file = f"{name.split('.')[0]}.{ext}_new.phyre"
 
@@ -140,138 +138,144 @@ def phyre_save(name):
                         b'\x00\x00\x00\x0B\x00\x00\x00\x58\x02\x00\x01\x48\x04\x01\x48' + postfix + image_data)
 
 
-def open_file(phyre_file=''):
-    global dir_path
+def select_file():
 
-    if phyre_file == '':
-        filetypes = (('Phyre files', '*.phyre *.png *.dds *.bmp *.gxt'), ('All files', '*.*'))
-        phyre_file = fd.askopenfilename(title='Выберите Phyre файл',
-                                        filetypes=filetypes)
+    filetypes = (('Phyre files', '*.phyre *.png *.dds *.bmp *.gxt'), ('All files', '*.*'))
+    phyre_files = fd.askopenfilenames(title='Выберите Phyre файл',
+                                      filetypes=filetypes)
 
-    if phyre_file == '':
+    if phyre_files == '':
         input('Файл не выбран!')
         return
-
-    if phyre_file.split('.')[-1] != 'phyre':
-        phyre_save(phyre_file)
-        return
-
-    dir_path = os.path.dirname(phyre_file)
-    name = os.path.basename(phyre_file).split('.')[0]
-
-    if 'vita' in phyre_file:
-        ft = b'dds\x00'
-        file_type = 'gxt'
-        head_size = 42
-    elif 'dds' in phyre_file:
-        ft = b'dds\x00'
-        file_type = 'dds'
-        head_size = 42
-    elif 'png' in phyre_file:
-        ft = b'png\x00'
-        file_type = 'png'
-        head_size = 43
     else:
-        input('Неподдреживемый тип файла!')
-        return
+        for file in phyre_files:
+            yield file
 
-    with open(phyre_file, 'rb') as phyre:
 
-        phyre.seek(4)
-        size = int.from_bytes(phyre.read(4), byteorder='little')
-        metaSize = int.from_bytes(phyre.read(4), byteorder='little')
-        platform = phyre.read(4)
-        supported = [b'1XNG', b'\x01MXG', b'11XD']
+def open_file():
+    global dir_path
 
-        if platform not in supported:
-            input('Неподдерживаемая платформа\n'
-                  'Выберите файл для Switch, PC или Vita версии игры!')
-            return
+    for phyre_file in select_file():
 
-        phyre.seek(72, 1)
-        baseHeaderSize = int.from_bytes(phyre.read(4), byteorder='little')
-        varsCount = int.from_bytes(phyre.read(4), byteorder='little')
-        dirsCount = int.from_bytes(phyre.read(4), byteorder='little')
-        paramsCount = int.from_bytes(phyre.read(4), byteorder='little')
-        tableSize = int.from_bytes(phyre.read(4), byteorder='little')
-        stringTableOffset = size + metaSize - tableSize
-        phyre.seek(8, 1)
-        startTableDataStart = phyre.tell()
+        if phyre_file.split('.')[-1] != 'phyre':
+            phyre_save(phyre_file)
 
-        phyre.seek(stringTableOffset)
-        table = phyre.read(tableSize)
-        stringTable = [t.decode('utf-8') for t in table.split(b'\x00')][:-1]
+        else:
+            dir_path = os.path.dirname(phyre_file)
+            name = os.path.basename(phyre_file).split('.')[0]
 
-        with open('temp.dat', 'wb') as temp_file:
-            temp_file.write(table)
+            if 'vita' in phyre_file:
+                ft = b'dds\x00'
+                file_type = 'gxt'
+                head_size = 42
+            elif 'dds' in phyre_file:
+                ft = b'dds\x00'
+                file_type = 'dds'
+                head_size = 42
+            elif 'png' in phyre_file:
+                ft = b'png\x00'
+                file_type = 'png'
+                head_size = 43
+            else:
+                input('Неподдреживемый тип файла!')
+                return
 
-        phyre.seek(startTableDataStart)
+            with open(phyre_file, 'rb') as phyre:
 
-        paramsList = {}
+                phyre.seek(4)
+                size = int.from_bytes(phyre.read(4), byteorder='little')
+                metaSize = int.from_bytes(phyre.read(4), byteorder='little')
+                platform = phyre.read(4)
+                supported = [b'1XNG', b'\x01MXG', b'11XD']
 
-        def getName(o):
+                if platform not in supported:
+                    input('Неподдерживаемая платформа\n'
+                          'Выберите файл для Switch, PC или Vita версии игры!')
+                    return
 
-            with open('temp.dat', 'rb') as temp2:
-                temp2.seek(o)
-                return temp2.read().split(b'\x00')[0].decode('utf-8')
+                phyre.seek(72, 1)
+                baseHeaderSize = int.from_bytes(phyre.read(4), byteorder='little')
+                varsCount = int.from_bytes(phyre.read(4), byteorder='little')
+                dirsCount = int.from_bytes(phyre.read(4), byteorder='little')
+                paramsCount = int.from_bytes(phyre.read(4), byteorder='little')
+                tableSize = int.from_bytes(phyre.read(4), byteorder='little')
+                stringTableOffset = size + metaSize - tableSize
+                phyre.seek(8, 1)
+                startTableDataStart = phyre.tell()
 
-        for c in range(varsCount):
-            offset = int.from_bytes(phyre.read(4), byteorder='little')
-            paramsList[getName(offset)] = {'offset': offset}
+                phyre.seek(stringTableOffset)
+                table = phyre.read(tableSize)
+                stringTable = [t.decode('utf-8') for t in table.split(b'\x00')][:-1]
 
-        for d in range(varsCount, varsCount + dirsCount):
-            parentDirId = int.from_bytes(phyre.read(4), byteorder='little')
-            data = phyre.read(4)
-            offset = int.from_bytes(phyre.read(4), byteorder='little')
-            magic = [phyre.read(4) for _ in range(6)]
-            paramsList[getName(offset)] = {'parentDirId': parentDirId,
-                                           'data': data,
-                                           'offset': offset,
-                                           'magic': magic}
+                with open('temp.dat', 'wb') as temp_file:
+                    temp_file.write(table)
 
-        for e in range(dirsCount + varsCount, len(stringTable) + 6):
-            offset = int.from_bytes(phyre.read(4), byteorder='little')
-            tp = int.from_bytes(phyre.read(4), byteorder='little')
-            magic = [phyre.read(4) for _ in range(4)]
-            paramsList[getName(offset)] = {'offset': offset,
-                                           'type': tp,
-                                           'magic': magic}
+                phyre.seek(startTableDataStart)
 
-        phyre.seek(0)
-        data = phyre.read().split(b'\x00PTexture2D\x00')
-        image = data[-1]
+                paramsList = {}
 
-    size = data[-2].split(ft)[-1]
-    p = image[:5]
-    image_data = image[head_size:]
+                def getName(o):
 
-    if platform == b'11XD':
-        x = int.from_bytes(size[-79:-75], byteorder='little')
-        y = int.from_bytes(size[-83:-79], byteorder='little')
-    else:
-        x = int.from_bytes(size[-8:-4], byteorder='little')
-        y = int.from_bytes(size[-12:-8], byteorder='little')
+                    with open('temp.dat', 'rb') as temp2:
+                        temp2.seek(o)
+                        return temp2.read().split(b'\x00')[0].decode('utf-8')
 
-    print(x, y)
+                for c in range(varsCount):
+                    offset = int.from_bytes(phyre.read(4), byteorder='little')
+                    paramsList[getName(offset)] = {'offset': offset}
 
-    # Сохраняет заголовок файла, без размеров текстуры и кодека
-    with open(f'{dir_path}\\{name}.bin', 'wb') as head_file:
+                for d in range(varsCount, varsCount + dirsCount):
+                    parentDirId = int.from_bytes(phyre.read(4), byteorder='little')
+                    data = phyre.read(4)
+                    offset = int.from_bytes(phyre.read(4), byteorder='little')
+                    magic = [phyre.read(4) for _ in range(6)]
+                    paramsList[getName(offset)] = {'parentDirId': parentDirId,
+                                                   'data': data,
+                                                   'offset': offset,
+                                                   'magic': magic}
 
-        head_data = b''
+                for e in range(dirsCount + varsCount, len(stringTable) + 6):
+                    offset = int.from_bytes(phyre.read(4), byteorder='little')
+                    tp = int.from_bytes(phyre.read(4), byteorder='little')
+                    magic = [phyre.read(4) for _ in range(4)]
+                    paramsList[getName(offset)] = {'offset': offset,
+                                                   'type': tp,
+                                                   'magic': magic}
 
-        for d in range(len(data) - 1):
-            head_data += data[d] + b'\x00PTexture2D\x00'
+                phyre.seek(0)
+                data = phyre.read().split(b'\x00PTexture2D\x00')
+                image = data[-1]
 
-        head_data = head_data[:-24]
-        head_file.write(head_data if platform != b'11XD' else head_data + p)
+            size = data[-2].split(ft)[-1]
+            p = image[:5]
+            image_data = image[head_size:]
 
-    match file_type:
-        case 'dds':
-            dds_save(x, y, p, name, image_data)
-        case 'png':
-            png_save(x, y, p, name, image_data)
-        case 'gxt':
-            gxt_save(name, image_data)
+            if platform == b'11XD':
+                x = int.from_bytes(size[-79:-75], byteorder='little')
+                y = int.from_bytes(size[-83:-79], byteorder='little')
+            else:
+                x = int.from_bytes(size[-8:-4], byteorder='little')
+                y = int.from_bytes(size[-12:-8], byteorder='little')
+
+            print(x, y)
+
+            # Сохраняет заголовок файла, без размеров текстуры и кодека
+            with open(f'{dir_path}\\{name}.bin', 'wb') as head_file:
+
+                head_data = b''
+
+                for d in range(len(data) - 1):
+                    head_data += data[d] + b'\x00PTexture2D\x00'
+
+                head_data = head_data[:-24]
+                head_file.write(head_data if platform != b'11XD' else head_data + p)
+
+            if file_type == 'dds':
+                dds_save(x, y, p, name, image_data)
+            elif file_type == 'png':
+                png_save(x, y, p, name, image_data)
+            elif file_type == 'gxt':
+                gxt_save(name, image_data)
 
 
 if __name__ == "__main__":
